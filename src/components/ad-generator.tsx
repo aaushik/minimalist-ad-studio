@@ -26,6 +26,21 @@ const EXAMPLE_PRODUCT: ProductCreative = {
     "https://cdn.shopify.com/s/files/1/0410/9608/5665/products/B5Moisturizer1200-2-min.png?v=1756800645&width=1000",
 };
 
+const EMPTY_PRODUCT: ProductCreative = {
+  sourceUrl: "",
+  title: "",
+  eyebrow: "",
+  headline: "",
+  supportingCopy: "",
+  badges: "",
+  detailLine: "",
+  price: "",
+  compareAtPrice: "",
+  size: "",
+  cta: "Explore product",
+  imageUrl: "",
+};
+
 type Status =
   | { kind: "idle"; message: string }
   | { kind: "loading"; message: string }
@@ -42,6 +57,9 @@ export function AdGenerator() {
   const [showEditor, setShowEditor] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
   const creativeRef = useRef<HTMLDivElement>(null);
+  const canExport = Boolean(
+    product.title && product.headline && product.supportingCopy && product.imageUrl,
+  );
 
   const updateProduct = (field: keyof ProductCreative, value: string) => {
     setProduct((current) => ({ ...current, [field]: value }));
@@ -71,6 +89,7 @@ export function AdGenerator() {
         message: "Product facts loaded from Minimalist. Review the copy before exporting.",
       });
     } catch (error) {
+      setProduct({ ...EMPTY_PRODUCT, sourceUrl: url });
       setShowEditor(true);
       setStatus({
         kind: "error",
@@ -180,6 +199,7 @@ export function AdGenerator() {
               <p className="editor-note">
                 These fields are prefilled from the page. Treat edits as marketer-owned copy.
               </p>
+              <TextField label="Product name" value={product.title} maxLength={58} onChange={(value) => updateProduct("title", value)} />
               <TextField label="Eyebrow" value={product.eyebrow} maxLength={38} onChange={(value) => updateProduct("eyebrow", value)} />
               <TextArea label="Headline" value={product.headline} maxLength={72} hint="Use a line break to control wrapping." onChange={(value) => updateProduct("headline", value)} />
               <TextArea label="Supporting copy" value={product.supportingCopy} maxLength={165} onChange={(value) => updateProduct("supportingCopy", value)} />
@@ -190,6 +210,7 @@ export function AdGenerator() {
                 <TextField label="Size" value={product.size} maxLength={14} onChange={(value) => updateProduct("size", value)} />
                 <TextField label="Price" value={product.price} maxLength={14} onChange={(value) => updateProduct("price", value)} />
               </div>
+              <TextField label="Original price (optional)" value={product.compareAtPrice ?? ""} maxLength={14} onChange={(value) => updateProduct("compareAtPrice", value)} />
               <TextField label="Call to action" value={product.cta} maxLength={28} onChange={(value) => updateProduct("cta", value)} />
               <label className="upload-button">
                 <input type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadProductImage} />
@@ -215,7 +236,13 @@ export function AdGenerator() {
               <span>DRAFT</span>
               <p>Generated from page facts. Final review is still required.</p>
             </div>
-            <button className="download-button" type="button" onClick={downloadCreative} disabled={isExporting}>
+            <button
+              className="download-button"
+              type="button"
+              onClick={downloadCreative}
+              disabled={isExporting || !canExport}
+              title={canExport ? "Download this draft" : "Add a product name, headline, supporting copy, and image first"}
+            >
               {isExporting ? "Preparing PNG…" : "Download PNG"}
               <DownloadIcon />
             </button>

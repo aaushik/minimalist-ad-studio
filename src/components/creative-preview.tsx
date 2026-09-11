@@ -75,12 +75,12 @@ export const CreativePreview = forwardRef<HTMLDivElement, CreativePreviewProps>(
                 )}
               </div>
               <div className="creative-detail">
-                <b>FORMULA FIRST · CLEARLY LABELLED</b>
+                <b>PRODUCT PAGE CREATIVE</b>
                 <span>{product.detailLine || product.title}</span>
               </div>
             </section>
 
-            <div className="creative-format">Concept · 1080 × 1080</div>
+            <div className="creative-format">DRAFT · REVIEW REQUIRED · 1080 × 1080</div>
           </div>
         </div>
       </div>

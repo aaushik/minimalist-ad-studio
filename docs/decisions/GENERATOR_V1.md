@@ -20,10 +20,12 @@ composition as a PNG in the browser.
 
 The server validates the host and extracts the Shopify product handle. It uses
 the store's public product JSON for title, variants, price, tags, and product
-images, plus the canonical product page's Open Graph description and visible
-proof-point labels. If the richer page fetch fails, core product JSON can still
-produce a draft. The UI also supports manual copy edits and a replacement
-product image.
+images, plus the canonical product page's Open Graph description. If the richer
+page fetch fails, core product JSON can still produce a draft. Proof points are
+left empty unless entered by the marketer because matching arbitrary phrases in
+the full storefront HTML could accidentally attribute another product's claim
+to the current one. The UI supports manual copy edits and a replacement product
+image.
 
 ## Explicit cuts
 
@@ -33,4 +35,4 @@ product image.
 - No login, saved projects, or approval workflow.
 - No automatic “approved” state before the scorer exists.
 
-The output is labelled as a draft and says that final review is still required.
+The exported creative is labelled as a draft and says that review is required.

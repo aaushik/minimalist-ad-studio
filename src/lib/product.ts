@@ -86,7 +86,7 @@ function formatPrice(value: number | null | undefined) {
   }).format(value / 100);
 }
 
-function deriveHeadline(tags: string[] = []) {
+function deriveHeadline(title: string, tags: string[] = []) {
   const normalized = tags.map((tag) => tag.toLowerCase());
   const hasHydration = normalized.some((tag) =>
     ["hydration", "moisturization"].includes(tag),
@@ -99,27 +99,13 @@ function deriveHeadline(tags: string[] = []) {
   if (hasSunCare) return "Everyday sun protection.";
   if (hasOilBalance) return "Targeted care for oily skin.";
   if (hasHydration) return "Hydration for every day.";
-  return "Ingredient-led care.\nMade transparent.";
+  return title;
 }
 
 function deriveEyebrow(title: string) {
   return title
     .replace(/\s+(face\s+)?(moisturizer|moisturiser|serum|cleanser|sunscreen)$/i, "")
     .toUpperCase();
-}
-
-function extractBadges(html: string) {
-  const supportedLabels = [
-    "Fragrance Free",
-    "Non-comedogenic",
-    "Essential Oil Free",
-    "Silicone Free",
-    "Sulphate Free",
-  ];
-  const found = supportedLabels.filter((label) =>
-    html.toLowerCase().includes(label.toLowerCase()),
-  );
-  return found.slice(0, 2).join(" · ");
 }
 
 function shortenCopy(description: string) {
@@ -162,15 +148,14 @@ export async function fetchProductCreative(inputUrl: string): Promise<ProductCre
   if (!rawImage) throw new Error("No usable product image was found.");
 
   const description = extractMetaDescription(pageHtml);
-  const fallbackCopy = `${product.title}, presented with its ingredient concentration clearly stated.`;
 
   return {
     sourceUrl: canonicalUrl,
     title: product.title,
     eyebrow: deriveEyebrow(product.title),
-    headline: deriveHeadline(product.tags),
-    supportingCopy: shortenCopy(description || fallbackCopy),
-    badges: extractBadges(pageHtml),
+    headline: deriveHeadline(product.title, product.tags),
+    supportingCopy: shortenCopy(description),
+    badges: "",
     detailLine: product.title,
     price: formatPrice(selectedVariant?.price ?? product.price) ?? "",
     compareAtPrice: formatPrice(
