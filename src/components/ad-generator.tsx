@@ -176,8 +176,9 @@ export function AdGenerator() {
             <summary>Which URLs are supported?</summary>
             <p>
               Use a live <b>beminimalist.co</b> URL containing <code>/products/…</code>.
-              Direct and collection-prefixed product links both work. Collection, search,
-              homepage, other-domain, removed, and unpublished-product URLs do not.
+              Direct and collection-prefixed product links both work. Malformed, non-HTTPS,
+              collection-only, search, homepage, other-domain, removed, unpublished, or
+              inaccessible product-data URLs do not.
             </p>
             <small>Coverage check: all 20 reviewed product pages loaded successfully.</small>
           </details>
