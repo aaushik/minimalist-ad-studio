@@ -3,6 +3,8 @@
 This repository will contain the working prototype and the evidence behind its
 ad-review standard.
 
+**Live app:** <https://nudge-new-assignment.vercel.app>
+
 ## Current status
 
 The first generator surface is implemented. It accepts a Minimalist product
