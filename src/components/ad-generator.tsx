@@ -1,10 +1,12 @@
 "use client";
 
-import { toPng } from "html-to-image";
-import { ChangeEvent, useRef, useState } from "react";
+import { toJpeg, toPng } from "html-to-image";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 
+import { AdReviewer } from "@/components/ad-reviewer";
 import { CreativePreview } from "@/components/creative-preview";
 import type { ProductCreative } from "@/lib/product";
+import type { ReviewInput, ReviewResult } from "@/lib/scoring/types";
 
 const EXAMPLE_URL =
   "https://beminimalist.co/collections/best-sellers/products/vitamin-b5-10-moisturizer";
@@ -48,6 +50,7 @@ type Status =
   | { kind: "error"; message: string };
 
 export function AdGenerator() {
+  const [activeSurface, setActiveSurface] = useState<"generate" | "review">("generate");
   const [url, setUrl] = useState(EXAMPLE_URL);
   const [product, setProduct] = useState(EXAMPLE_PRODUCT);
   const [status, setStatus] = useState<Status>({
@@ -56,10 +59,23 @@ export function AdGenerator() {
   });
   const [showEditor, setShowEditor] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
+  const [reviewInput, setReviewInput] = useState<ReviewInput>({ source: "upload" });
+  const [reviewResult, setReviewResult] = useState<ReviewResult | null>(null);
+  const [isReviewing, setIsReviewing] = useState(false);
+  const [reviewError, setReviewError] = useState("");
   const creativeRef = useRef<HTMLDivElement>(null);
   const canExport = Boolean(
     product.title && product.headline && product.supportingCopy && product.imageUrl,
   );
+
+  useEffect(() => {
+    if (window.location.hash === "#review") setActiveSurface("review");
+  }, []);
+
+  const showSurface = (surface: "generate" | "review") => {
+    setActiveSurface(surface);
+    window.history.replaceState(null, "", surface === "review" ? "#review" : window.location.pathname);
+  };
 
   const updateProduct = (field: keyof ProductCreative, value: string) => {
     setProduct((current) => ({ ...current, [field]: value }));
@@ -132,6 +148,62 @@ export function AdGenerator() {
     }
   };
 
+  const scoreCreative = async (input: ReviewInput) => {
+    showSurface("review");
+    setReviewInput(input);
+    setReviewError("");
+    setIsReviewing(true);
+    try {
+      const response = await fetch("/api/review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(input),
+      });
+      const payload = (await response.json()) as ReviewResult & { error?: string };
+      if (!response.ok) throw new Error(payload.error || "The creative could not be reviewed.");
+      setReviewResult(payload);
+    } catch (error) {
+      setReviewError(error instanceof Error ? error.message : "The creative could not be reviewed.");
+    } finally {
+      setIsReviewing(false);
+    }
+  };
+
+  const sendToScorer = async () => {
+    if (!creativeRef.current) return;
+    setIsExporting(true);
+    try {
+      const imageDataUrl = await toJpeg(creativeRef.current, {
+        cacheBust: true,
+        canvasWidth: 1080,
+        canvasHeight: 1080,
+        pixelRatio: 1,
+        quality: 0.9,
+      });
+      await scoreCreative({
+        source: "generator",
+        imageDataUrl,
+        knownText: [
+          "Minimalist.",
+          product.eyebrow,
+          product.headline,
+          product.supportingCopy,
+          product.badges,
+          product.detailLine,
+          product.size,
+          product.price,
+          product.compareAtPrice,
+          product.cta,
+        ].filter(Boolean).join("\n"),
+        productContext: { title: product.title, url: product.sourceUrl || url },
+      });
+    } catch {
+      setStatus({ kind: "error", message: "The preview could not be sent to the scorer. Try loading the product again." });
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   return (
     <main>
       <header className="site-header">
@@ -139,21 +211,23 @@ export function AdGenerator() {
           M<span>·</span>AD STUDIO
         </a>
         <div className="surface-tabs" aria-label="Product surfaces">
-          <span className="surface-tab active">Generate</span>
-          <span className="surface-tab upcoming">Review <small>next</small></span>
+          <button className={`surface-tab ${activeSurface === "generate" ? "active" : ""}`} type="button" onClick={() => showSurface("generate")}>Generate</button>
+          <button className={`surface-tab ${activeSurface === "review" ? "active" : ""}`} type="button" onClick={() => showSurface("review")}>Review</button>
         </div>
         <span className="prototype-label">Internal prototype</span>
       </header>
 
       <section className="hero" id="top">
-        <p className="kicker">Evidence-led creative production</p>
-        <h1>Turn a product page into a ready-to-review ad.</h1>
+        <p className="kicker">{activeSurface === "generate" ? "Evidence-led creative production" : "Actionable creative review"}</p>
+        <h1>{activeSurface === "generate" ? "Turn a product page into a ready-to-review ad." : "See what’s off—and exactly how to fix it."}</h1>
         <p className="hero-copy">
-          Real product imagery. Page-supported copy. A reusable layout designed for Minimalist.
+          {activeSurface === "generate"
+            ? "Real product imagery. Page-supported copy. A reusable layout designed for Minimalist."
+            : "Upload a static ad for a first-pass check across policy, brand tone and brand language."}
         </p>
       </section>
 
-      <section className="studio-grid">
+      {activeSurface === "generate" ? <section className="studio-grid">
         <aside className="control-panel">
           <div className="step-heading">
             <span>01</span>
@@ -246,23 +320,44 @@ export function AdGenerator() {
               <span>DRAFT</span>
               <p>Generated from page facts. Final review is still required.</p>
             </div>
-            <button
-              className="download-button"
-              type="button"
-              onClick={downloadCreative}
-              disabled={isExporting || !canExport}
-              title={canExport ? "Download this draft" : "Add a product name, headline, supporting copy, and image first"}
-            >
-              {isExporting ? "Preparing PNG…" : "Download PNG"}
-              <DownloadIcon />
-            </button>
+            <div className="creative-action-buttons">
+              <button
+                className="score-button"
+                type="button"
+                onClick={sendToScorer}
+                disabled={isExporting || !canExport}
+                title={canExport ? "Send this draft to Review" : "Complete the creative first"}
+              >
+                {isExporting ? "Preparing…" : "Send to scorer"}
+                <span aria-hidden="true">→</span>
+              </button>
+              <button
+                className="download-button"
+                type="button"
+                onClick={downloadCreative}
+                disabled={isExporting || !canExport}
+                title={canExport ? "Download this draft" : "Add a product name, headline, supporting copy, and image first"}
+              >
+                {isExporting ? "Preparing PNG…" : "Download PNG"}
+                <DownloadIcon />
+              </button>
+            </div>
           </div>
         </section>
-      </section>
+      </section> : (
+        <AdReviewer
+          input={reviewInput}
+          result={reviewResult}
+          isReviewing={isReviewing}
+          error={reviewError}
+          onInputChange={setReviewInput}
+          onReview={scoreCreative}
+        />
+      )}
 
       <footer>
-        <span>Minimalist Ad Studio · v0.1</span>
-        <span>Next: score this creative against the documented review standard.</span>
+        <span>Minimalist Ad Studio · v0.2</span>
+        <span>First-pass assistance only. Final claims, legal and brand approval stays with the reviewer.</span>
       </footer>
     </main>
   );

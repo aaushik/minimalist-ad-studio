@@ -9,10 +9,12 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@google/genai": "2.22.0",
     "html-to-image": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "zod": "4.6.2"
   },
   "devDependencies": {
     "@types/node": "latest",
