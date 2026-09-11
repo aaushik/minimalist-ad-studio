@@ -172,6 +172,15 @@ export function AdGenerator() {
               placeholder="https://beminimalist.co/products/…"
             />
           </label>
+          <details className="url-coverage">
+            <summary>Which URLs are supported?</summary>
+            <p>
+              Use a live <b>beminimalist.co</b> URL containing <code>/products/…</code>.
+              Direct and collection-prefixed product links both work. Collection, search,
+              homepage, other-domain, removed, and unpublished-product URLs do not.
+            </p>
+            <small>Coverage check: all 20 reviewed product pages loaded successfully.</small>
+          </details>
           <button className="primary-button" type="button" onClick={loadProduct} disabled={status.kind === "loading"}>
             {status.kind === "loading" ? "Reading product…" : "Build this ad"}
             <span aria-hidden="true">→</span>

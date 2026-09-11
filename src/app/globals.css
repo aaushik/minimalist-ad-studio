@@ -239,6 +239,37 @@ button {
   height: 52px;
 }
 
+.url-coverage {
+  margin: -6px 0 19px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.url-coverage summary {
+  width: fit-content;
+  cursor: pointer;
+  color: #526368;
+  font-weight: 700;
+}
+
+.url-coverage p {
+  margin: 9px 0 5px;
+}
+
+.url-coverage code {
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: #eff3f2;
+  color: #35484e;
+  font-size: 10px;
+}
+
+.url-coverage small {
+  color: #728287;
+  font-size: 10px;
+}
+
 .primary-button,
 .download-button {
   border: 0;
