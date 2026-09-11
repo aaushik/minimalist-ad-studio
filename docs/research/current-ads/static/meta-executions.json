@@ -1,0 +1,2835 @@
+{
+  "generatedAt": "2026-09-11T08:18:27.426Z",
+  "purpose": "Reference executions for scorer-rule derivation and ad-generation examples.",
+  "limitations": [
+    "Tags are keyword-derived review aids, not approved brand or policy judgements.",
+    "Image text has not yet been separately OCR-tagged; associated Meta card copy is included.",
+    "Candidate family membership is based on exact copy/image matches and awaits semantic review."
+  ],
+  "executionCount": 78,
+  "executions": [
+    {
+      "executionId": "META-E001",
+      "familyIds": [
+        "META-C015"
+      ],
+      "libraryIds": [
+        "1001370322667189"
+      ],
+      "imageFiles": [
+        "1001370322667189-01.jpg"
+      ],
+      "canonicalImage": "1001370322667189-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Take charge of oily skin with a powerful 3-step routine designed to cleanse, treat, and hydrate — without clogging pores.\n• Salicylic Acid + LHA Cleanser – gently exfoliates and unclogs pores to reduce excess oil\n• Niacinamide 10% Serum – targets blemishes and regulates sebum production\n• Vitamin B5 Moisturizer – lightweight, oil-free hydration to balance skin without greasiness\n• Non-comedogenic, fragrance-free, and suitable for all skin types\n• Formulated for effective, visible results backed by science\nOne Kit. Complete Oil Control\nReward: Cashback\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E002",
+      "familyIds": [
+        "META-C016"
+      ],
+      "libraryIds": [
+        "1005645485589335"
+      ],
+      "imageFiles": [
+        "1005645485589335-01.jpg"
+      ],
+      "canonicalImage": "1005645485589335-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Turn back time—gently and effectively.\nMinimalist Retinol 0.3% is a beginner-friendly anti-aging serum that helps prevent early signs of aging without irritation.\nSmooths fine lines and wrinkles\nPrevents skin sagging\nBoosts collagen for firmer, younger skin\nPowered by Bakuchiol, CoQ10 & Squalane\nLight, non-greasy formula for all skin types\nStart early. Stay timeless.\nExperience visibly younger skin—one drop at a time.\nReward: Cashback\nFine Lines Reduced in Just 30 Days\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "barrier-sensitive",
+        "anti-ageing-firming"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "time-bound-result",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "time-bound-result",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E003",
+      "familyIds": [
+        "META-C017"
+      ],
+      "libraryIds": [
+        "1006278088774514"
+      ],
+      "imageFiles": [
+        "1006278088774514-01.jpg"
+      ],
+      "canonicalImage": "1006278088774514-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Daily sun protection that feels like skincare.\nSPF 30 body lotion enriched with green tea, glycerin & multivitamins.\nHydrates, nourishes & shields — for soft, healthy skin all over.\nBEMINIMALIST.CO\nGuaranteed cashback\nSPF 30 that keeps your skin smooth, supple & safe\nShop now",
+      "callToAction": "Shop now",
+      "productCategories": [
+        "sun-protection",
+        "hydration-moisturising"
+      ],
+      "creativeArchetypes": [],
+      "claimTags": [
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E004",
+      "familyIds": [
+        "META-C009"
+      ],
+      "libraryIds": [
+        "1009046391714627"
+      ],
+      "imageFiles": [
+        "1009046391714627-01.jpg"
+      ],
+      "canonicalImage": "1009046391714627-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Your Simple, Effective Acne Routine\nTired of complicated skincare? This 3-step routine targets acne without overwhelming your skin.\n• Cleanse: Controls oil and unclogs pores with Salicylic Acid + LHA 0.2%\n• Treat: Reduces active acne with 2% Salicylic Acid serum\n• Moisturise: Soothes and strengthens with Vitamin B5 10%\nMinimal steps. Maximum clarity.\nFor skin that feels balanced, clear, and healthy.\nClinically Proven Care\nReward: Cashback\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E005",
+      "familyIds": [
+        "META-C018"
+      ],
+      "libraryIds": [
+        "1016035757454883"
+      ],
+      "imageFiles": [
+        "1016035757454883-01.jpg"
+      ],
+      "canonicalImage": "1016035757454883-01.jpg",
+      "sourceStartDates": [
+        "25 Jun 2026"
+      ],
+      "associatedCopy": "\"It’s cloudy and raining, so I can skip sunscreen, right?\"  Wrong. Up to 80% of UV rays penetrate right through monsoon clouds, causing silent skin damage, pigmentation, and premature aging.\nBut your regular sunscreen won't survive the rainy season. You need a formula built for the weather.\nMeet the Minimalist Light Fluid SPF 50. It’s ultra-lightweight and clinically tested to be sweat and water-resistant for up to 80 minutes. Whether you get caught in a sudden downpour or melt in the humid heat, your sun protection stays completely locked in.\nCloudy Days Don't Block UV Rays\nSweat & water-resistant SPF 50. High protection, zero white cast.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening",
+        "sun-protection"
+      ],
+      "creativeArchetypes": [
+        "quantified-proof",
+        "testimonial-social-proof",
+        "seasonal-problem-solution",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "testimonial"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "testimonial"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E006",
+      "familyIds": [
+        "META-C007"
+      ],
+      "libraryIds": [
+        "1020829984164191"
+      ],
+      "imageFiles": [
+        "1020829984164191-01.jpg"
+      ],
+      "canonicalImage": "1020829984164191-01.jpg",
+      "sourceStartDates": [
+        "31 Jul 2026"
+      ],
+      "associatedCopy": "New Launch!!\nWhy choose between hair growth and anti-greying when you can do both?\nMeet the NEW Minimalist Hair Growth + Anti Grey 15.6% Serum. Science backed solution to fight premature greying while boosting hair density.\nNEW LAUNCH: Fight Premature Greying + Hair Loss\nFight Premature Greying in 1 Step\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hair-growth-anti-grey"
+      ],
+      "creativeArchetypes": [
+        "new-launch",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E007",
+      "familyIds": [
+        "META-C010"
+      ],
+      "libraryIds": [
+        "1021609566941838"
+      ],
+      "imageFiles": [
+        "1021609566941838-01.jpg"
+      ],
+      "canonicalImage": "1021609566941838-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Elevate your skincare with Minimalist Vitamin C 10% Serum! 🌟 Target dull skin, UV damage, dark spots, and uneven tone for a glowing, radiant complexion. Plus, enjoy 10% Mcash on every purchase. Glow and save today.\nRadiant Skin & 10% Mcash\nBrighten your skin and your day with Minimalist Vitamin C 10% Serum. Target key skin concerns and get rewarded with 10% Mcash on every order\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E008",
+      "familyIds": [
+        "META-C005"
+      ],
+      "libraryIds": [
+        "1023646183828867"
+      ],
+      "imageFiles": [
+        "1023646183828867-01.jpg"
+      ],
+      "canonicalImage": "1023646183828867-01.jpg",
+      "sourceStartDates": [
+        "13 Aug 2026"
+      ],
+      "associatedCopy": "Say goodbye to oiliness, acne breakouts, and uneven skin tone! 🛡️ Proper cleansing is the very first step to clear skin. Get the Minimalist Salicylic Acid + LHA 02% Acne Control Gel Cleanser delivered to your doorstep in minutes. Formulated with Zinc and Oat Extract to reduce excess oil without drying out your skin. Shop the sale now on Zepto! ⚡🛒\nZEPTO.COM\nMinimalistinc\nZepto is your next-door quick commerce app, delivering online groceries, fruits, vegetables, personal care, electronics & much more to you in just minutes.\nOrder Now",
+      "callToAction": "Order Now",
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "barrier-sensitive",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E009",
+      "familyIds": [
+        "META-C019"
+      ],
+      "libraryIds": [
+        "1029164189491237"
+      ],
+      "imageFiles": [
+        "1029164189491237-01.jpg"
+      ],
+      "canonicalImage": "1029164189491237-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Reveal younger, smoother skin—safely and effectively.\nMinimalist Retinol 0.3% is beginner-friendly and formulated with Bakuchiol, CoQ10, and Squalane to deliver visible results without irritation.\n- Reduces fine lines and wrinkles\n- 93% users reported firmer skin in 8 weeks*\n- Fades acne scars and improves texture\n- Lightweight, non-comedogenic, and suits all skin types\nThousands have made the switch. Now it's your turn.\nTry Minimalist Retinol and see the difference.\nReward: Cashback\nFine Lines Reduced in Just 30 Days\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "barrier-sensitive",
+        "anti-ageing-firming"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "quantified-proof",
+        "testimonial-social-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E010",
+      "familyIds": [
+        "META-C020"
+      ],
+      "libraryIds": [
+        "1030603056584596"
+      ],
+      "imageFiles": [
+        "1030603056584596-01.jpg"
+      ],
+      "canonicalImage": "1030603056584596-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "New Launch :\nCopper Peptide + PDRN 1.25% Skin Firming Serum\n+24.3% boost in skin elasticity*\n+18.6% boost in hydration*\nPowered by Sodium DNA (PDRN) 0.25% and Copper Peptide 1%, this serum restores elasticity, boosts collagen & elastin, and helps prevent skin aging.\nFirm. Hydrate. Revive.\nEarn cashback on every purchase\nYour Anti-Aging Secret is here\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hydration-moisturising",
+        "anti-ageing-firming"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "quantified-proof",
+        "new-launch"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "numeric-outcome",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "numeric-outcome",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E011",
+      "familyIds": [
+        "META-C021"
+      ],
+      "libraryIds": [
+        "1043380451363992"
+      ],
+      "imageFiles": [
+        "1043380451363992-01.jpg"
+      ],
+      "canonicalImage": "1043380451363992-01.jpg",
+      "sourceStartDates": [
+        "25 Jun 2026"
+      ],
+      "associatedCopy": "Humid weather making your regular moisturizer feel like a sticky mess? Time to ditch the heavy creams.\nGive your skin the lightweight hydration it craves with Minimalist Vitamin B5 10% Moisturizer. Formulated for oily and acne-prone skin types, this oil-free gel formula delivers intense nourishment while keeping your face fresh, matte, and comfortable all through the rainy season.\nDon't let the monsoon humidity trigger your breakouts. Upgrade your skincare routine today.\nZero Grease. Just Lightweight Hydration.\nOil-free gel moisturizer. Perfect for oily & acne-prone skin.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "hydration-moisturising"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "seasonal-problem-solution",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E012",
+      "familyIds": [
+        "META-C022"
+      ],
+      "libraryIds": [
+        "1048233921490090"
+      ],
+      "imageFiles": [
+        "1048233921490090-01.jpg"
+      ],
+      "canonicalImage": "1048233921490090-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Formulated with Marula, Jojoba & Olive oils, this cleanser breaks down even waterproof makeup — while maintaining your skin’s natural moisture.\n5% Marula Oil for a Non-Drying Cleanse\nGently removes oils & impurities, leaves skin clean\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E013",
+      "familyIds": [
+        "META-C004"
+      ],
+      "libraryIds": [
+        "1069428508846261"
+      ],
+      "imageFiles": [
+        "1069428508846261-01.jpg"
+      ],
+      "canonicalImage": "1069428508846261-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Frizz-Free, Stronger Hair in 3 Steps.\nRepair damage, smooth cuticles & protect from UV — all in one powerful routine.\nStep 1: Cleanse with Bond-Repair Shampoo\nStep 2: Deep Repair with Bond-Repair Mask\nStep 3: Shield & Smooth with Frizz Control Serum (SPF 30)\nHealthier, shinier hair starts with science.\nMinimalist Hair Repair Ritual Kit — because real repair is a routine.\nEarn Cashback! Limited Time offer on kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "sun-protection",
+        "hair-repair-frizz",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E014",
+      "familyIds": [
+        "META-C023"
+      ],
+      "libraryIds": [
+        "1069586518930107"
+      ],
+      "imageFiles": [
+        "1069586518930107-01.jpg"
+      ],
+      "canonicalImage": "1069586518930107-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Say goodbye to excess oil and breakouts with a dermatologist-approved 3-step routine designed for balanced, healthy-looking skin.\n• Step 1 – Cleanse: Salicylic Acid + LHA 02%\nDeep cleanses pores & controls oil without over-drying\n• Step 2 – Treat: Niacinamide 10% Serum\nFades blemishes, evens out skin tone & reduces sebum\n• Step 3 – Moisturize: Vitamin B5 10% Gel\nLightweight, oil-free hydration that nourishes & soothes\n• Non-comedogenic. Fragrance-free. Ideal for oily and acne-prone skin\n• Backed by science. Loved by skin.\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E015",
+      "familyIds": [
+        "META-C024"
+      ],
+      "libraryIds": [
+        "1091140040069984"
+      ],
+      "imageFiles": [
+        "1091140040069984-01.jpg"
+      ],
+      "canonicalImage": "1091140040069984-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Minimalist Retinol 0.3% – Your Beginner-Friendly Anti-Aging Solution\n• Reduces early signs of aging – fine lines, wrinkles & sagging\n• Improves skin texture and fades acne scars\n• Lightweight, non-greasy and absorbs quickly\n• Gentle formula with Coenzyme Q10, Bakuchiol & Squalane\n• Suitable for all skin types, even sensitive skin\nReal reviews, real results:\n“Very lightweight, no irritation, must try.” – Swastika G.\n“Texture is smoother, scars visibly reduced in 3 months.” – Muskan D.\nExperience the power of clinically backed skincare.\nTry Minimalist Retinol 0.3% today.\n#MinimalistSkincare #RetinolSerum #AntiAgingCare #SkinThatGlows #CleanEffectiveBeauty\nStart Your Anti-Aging Routine with Minimalist Retinol\nReduce Fine Lines & Scars with Retinol 0.3%\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "barrier-sensitive",
+        "anti-ageing-firming"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof",
+        "testimonial-social-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "time-bound-result",
+        "testimonial"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "time-bound-result",
+        "testimonial"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E016",
+      "familyIds": [
+        "META-C025"
+      ],
+      "libraryIds": [
+        "1248566807253131"
+      ],
+      "imageFiles": [
+        "1248566807253131-01.jpg"
+      ],
+      "canonicalImage": "1248566807253131-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Say goodbye to excess oil and breakouts with a dermatologist-approved 3-step routine designed for balanced, healthy-looking skin.\n• Step 1 – Cleanse: Salicylic Acid + LHA 02%\nDeep cleanses pores & controls oil without over-drying\n• Step 2 – Treat: Niacinamide 10% Serum\nFades blemishes, evens out skin tone & reduces sebum\n• Step 3 – Moisturize: Vitamin B5 10% Gel\nLightweight, oil-free hydration that nourishes & soothes\n• Non-comedogenic. Fragrance-free. Ideal for oily and acne-prone skin\n• Backed by science. Loved by skin.\nBEMINIMALIST.CO\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now\nReward: Cashback\nBEMINIMALIST.CO\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now\nReward: Cashback\nBEMINIMALIST.CO\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now\nReward: Cashback",
+      "callToAction": null,
+      "productCategories": [
+        "acne-oil-control",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E017",
+      "familyIds": [
+        "META-C025"
+      ],
+      "libraryIds": [
+        "1248566807253131"
+      ],
+      "imageFiles": [
+        "1248566807253131-02.jpg"
+      ],
+      "canonicalImage": "1248566807253131-02.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Say goodbye to excess oil and breakouts with a dermatologist-approved 3-step routine designed for balanced, healthy-looking skin.\n• Step 1 – Cleanse: Salicylic Acid + LHA 02%\nDeep cleanses pores & controls oil without over-drying\n• Step 2 – Treat: Niacinamide 10% Serum\nFades blemishes, evens out skin tone & reduces sebum\n• Step 3 – Moisturize: Vitamin B5 10% Gel\nLightweight, oil-free hydration that nourishes & soothes\n• Non-comedogenic. Fragrance-free. Ideal for oily and acne-prone skin\n• Backed by science. Loved by skin.\nBEMINIMALIST.CO\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now\nReward: Cashback\nBEMINIMALIST.CO\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now\nReward: Cashback\nBEMINIMALIST.CO\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now\nReward: Cashback",
+      "callToAction": null,
+      "productCategories": [
+        "acne-oil-control",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E018",
+      "familyIds": [
+        "META-C025"
+      ],
+      "libraryIds": [
+        "1248566807253131"
+      ],
+      "imageFiles": [
+        "1248566807253131-03.jpg"
+      ],
+      "canonicalImage": "1248566807253131-03.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Say goodbye to excess oil and breakouts with a dermatologist-approved 3-step routine designed for balanced, healthy-looking skin.\n• Step 1 – Cleanse: Salicylic Acid + LHA 02%\nDeep cleanses pores & controls oil without over-drying\n• Step 2 – Treat: Niacinamide 10% Serum\nFades blemishes, evens out skin tone & reduces sebum\n• Step 3 – Moisturize: Vitamin B5 10% Gel\nLightweight, oil-free hydration that nourishes & soothes\n• Non-comedogenic. Fragrance-free. Ideal for oily and acne-prone skin\n• Backed by science. Loved by skin.\nBEMINIMALIST.CO\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now\nReward: Cashback\nBEMINIMALIST.CO\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now\nReward: Cashback\nBEMINIMALIST.CO\nYour 3-Step Routine for Shine-Free, Healthy Skin\nReward: Cashback\nShop Now\nReward: Cashback",
+      "callToAction": null,
+      "productCategories": [
+        "acne-oil-control",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E019",
+      "familyIds": [
+        "META-C026"
+      ],
+      "libraryIds": [
+        "1357518779895338"
+      ],
+      "imageFiles": [
+        "1357518779895338-01.jpg"
+      ],
+      "canonicalImage": "1357518779895338-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Transform your skin with a hydration routine trusted by thousands. Clinically formulated to deeply moisturize, restore skin health, and bring back your glow.\n• Aquaporin Booster Cleanser – gently cleanses while maintaining moisture balance\n• Hyaluronic + PGA Serum – offers intense hydration and improves skin texture\n• Marula Oil Moisturizer – nourishes deeply, leaving skin soft, plump, and glowing\n• Suitable for dry, flaky, or dull skin\n• Non-comedogenic. Fragrance-free. Proven by real users\n“After just 2 weeks, my face looks plump and glowing.” – Aditi H., Verified Nykaa Customer\nGowing skin in Just 2 Weeks\nEarn Cashback! Limited Time offer on kits!\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "testimonial-social-proof"
+      ],
+      "claimTags": [
+        "time-bound-result",
+        "testimonial",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "time-bound-result",
+        "testimonial",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E020",
+      "familyIds": [
+        "META-C006"
+      ],
+      "libraryIds": [
+        "1364232715643648"
+      ],
+      "imageFiles": [
+        "1364232715643648-01.jpg"
+      ],
+      "canonicalImage": "1364232715643648-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Say goodbye to clogged pores, rough patches, and uneven skin tone. The Minimalist 8% Glycolic Acid Exfoliating Liquid is your all-in-one solution for glowing skin. Gently exfoliates to improve texture, fade dark spots on elbows, underarms, and knees, and even helps with scalp buildup. Dermatologically tested, safe for daily use.\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "dandruff-scalp",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E021",
+      "familyIds": [
+        "META-C001"
+      ],
+      "libraryIds": [
+        "1365545252142669",
+        "1353654403544889",
+        "1413167237316292"
+      ],
+      "imageFiles": [
+        "1365545252142669-01.jpg",
+        "1353654403544889-01.jpg",
+        "1413167237316292-01.jpg"
+      ],
+      "canonicalImage": "1365545252142669-01.jpg",
+      "sourceStartDates": [
+        "3 Jul 2026",
+        "15 Jul 2026"
+      ],
+      "associatedCopy": "LINK.BLINKIT.COM\nMinimalistinc\nShop online for groceries and get your order delivered to your doorstep. Enjoy delivery of 30,000+ products with Blinkit\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [],
+      "creativeArchetypes": [],
+      "claimTags": [],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E022",
+      "familyIds": [
+        "META-C027"
+      ],
+      "libraryIds": [
+        "1373312194709433"
+      ],
+      "imageFiles": [
+        "1373312194709433-01.jpg"
+      ],
+      "canonicalImage": "1373312194709433-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Ditch harsh exfoliators for a smarter way to tone! 🌿\nMeet the Minimalist PHA 03% Face Toner, powered by gentle actives and infused Prebiotics & Probiotics that protect and balance your skin microbiome.\nHydrate, Tighten Pores & Even Texture\nGentle 3% PHA Toner with Multi-Biotics.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E023",
+      "familyIds": [
+        "META-C028"
+      ],
+      "libraryIds": [
+        "1373614864690172"
+      ],
+      "imageFiles": [
+        "1373614864690172-01.jpg"
+      ],
+      "canonicalImage": "1373614864690172-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "A gentle yet powerful daily cleanser formulated with 2% BHA + LHA to exfoliate, fight acne, and control excess oil — without over-drying.\nWhy You'll Love It:\nClears pores and gently exfoliates\nReduces and prevents breakouts\nHelps manage oil production\nIdeal for: All skin types, especially oily and acne-prone skin.\nRedeem mCash for additional discounts\nExfoliate Daily, Fight Acne Gently\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E024",
+      "familyIds": [
+        "META-C006"
+      ],
+      "libraryIds": [
+        "1427081035896461"
+      ],
+      "imageFiles": [
+        "1427081035896461-01.jpg"
+      ],
+      "canonicalImage": "1427081035896461-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Say goodbye to clogged pores, rough patches, and uneven skin tone. The Minimalist 8% Glycolic Acid Exfoliating Liquid is your all-in-one solution for glowing skin. Gently exfoliates to improve texture, fade dark spots on elbows, underarms, and knees, and even helps with scalp buildup. Dermatologically tested, safe for daily use.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.",
+      "callToAction": null,
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "dandruff-scalp",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E025",
+      "familyIds": [
+        "META-C006"
+      ],
+      "libraryIds": [
+        "1427081035896461"
+      ],
+      "imageFiles": [
+        "1427081035896461-02.jpg"
+      ],
+      "canonicalImage": "1427081035896461-02.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Say goodbye to clogged pores, rough patches, and uneven skin tone. The Minimalist 8% Glycolic Acid Exfoliating Liquid is your all-in-one solution for glowing skin. Gently exfoliates to improve texture, fade dark spots on elbows, underarms, and knees, and even helps with scalp buildup. Dermatologically tested, safe for daily use.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.",
+      "callToAction": null,
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "dandruff-scalp",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E026",
+      "familyIds": [
+        "META-C006"
+      ],
+      "libraryIds": [
+        "1427081035896461"
+      ],
+      "imageFiles": [
+        "1427081035896461-03.jpg"
+      ],
+      "canonicalImage": "1427081035896461-03.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Say goodbye to clogged pores, rough patches, and uneven skin tone. The Minimalist 8% Glycolic Acid Exfoliating Liquid is your all-in-one solution for glowing skin. Gently exfoliates to improve texture, fade dark spots on elbows, underarms, and knees, and even helps with scalp buildup. Dermatologically tested, safe for daily use.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.",
+      "callToAction": null,
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "dandruff-scalp",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E027",
+      "familyIds": [
+        "META-C006"
+      ],
+      "libraryIds": [
+        "1427081035896461"
+      ],
+      "imageFiles": [
+        "1427081035896461-04.jpg"
+      ],
+      "canonicalImage": "1427081035896461-04.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Say goodbye to clogged pores, rough patches, and uneven skin tone. The Minimalist 8% Glycolic Acid Exfoliating Liquid is your all-in-one solution for glowing skin. Gently exfoliates to improve texture, fade dark spots on elbows, underarms, and knees, and even helps with scalp buildup. Dermatologically tested, safe for daily use.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.\nBEMINIMALIST.CO\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now\nMulti-purpose exfoliating toner for face, body, and scalp care.",
+      "callToAction": null,
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "dandruff-scalp",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E028",
+      "familyIds": [
+        "META-C004"
+      ],
+      "libraryIds": [
+        "1431234639060196"
+      ],
+      "imageFiles": [
+        "1431234639060196-01.jpg"
+      ],
+      "canonicalImage": "1431234639060196-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Frizz-Free, Stronger Hair in 3 Steps.\nRepair damage, smooth cuticles & protect from UV — all in one powerful routine.\nStep 1: Cleanse with Bond-Repair Shampoo\nStep 2: Deep Repair with Bond-Repair Mask\nStep 3: Shield & Smooth with Frizz Control Serum (SPF 30)\nHealthier, shinier hair starts with science.\nMinimalist Hair Repair Ritual Kit — because real repair is a routine.\nEarn Cashback! Limited Time offer on kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "sun-protection",
+        "hair-repair-frizz",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E029",
+      "familyIds": [
+        "META-C005"
+      ],
+      "libraryIds": [
+        "1468840825270183"
+      ],
+      "imageFiles": [
+        "1468840825270183-01.jpg"
+      ],
+      "canonicalImage": "1468840825270183-01.jpg",
+      "sourceStartDates": [
+        "20 Jul 2026"
+      ],
+      "associatedCopy": "Say goodbye to oiliness, acne breakouts, and uneven skin tone! 🛡️ Proper cleansing is the very first step to clear skin. Get the Minimalist Salicylic Acid + LHA 02% Acne Control Gel Cleanser delivered to your doorstep in minutes. Formulated with Zinc and Oat Extract to reduce excess oil without drying out your skin. Shop the sale now on Zepto! ⚡🛒\nZEPTO.COM\nMinimalistinc\nZepto is your next-door quick commerce app, delivering online groceries, fruits, vegetables, personal care, electronics & much more to you in just minutes.\nOrder Now",
+      "callToAction": "Order Now",
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "barrier-sensitive",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E030",
+      "familyIds": [
+        "META-C007"
+      ],
+      "libraryIds": [
+        "1539208064339221"
+      ],
+      "imageFiles": [
+        "1539208064339221-01.jpg"
+      ],
+      "canonicalImage": "1539208064339221-01.jpg",
+      "sourceStartDates": [
+        "31 Jul 2026"
+      ],
+      "associatedCopy": "New Launch!!\nSpotting early greys along with extra hair fall? Don’t cover it up; target both at the root.\nIntroducing the NEW Minimalist Hair Growth + Anti Grey 15.6% Serum. Powered by Silverfree and Darkenyl, it fights premature greying while boosting hair density in one daily step.\nKey Benefits:\n1. Fights premature greying & hair fall simultaneously\n2. Stimulates natural re-pigmentation at the follicle\n3. Non-sticky, lightweight daily serum\nOne serum to halt hair fall and turn back the clock on premature greys.\nNEW LAUNCH: Fight Premature Greying + Hair Loss\nFight Premature Greying in 1 Step\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening",
+        "hair-growth-anti-grey"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "new-launch",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E031",
+      "familyIds": [
+        "META-C029"
+      ],
+      "libraryIds": [
+        "1539660707084980"
+      ],
+      "imageFiles": [
+        "1539660707084980-01.jpg"
+      ],
+      "canonicalImage": "1539660707084980-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "👀 Dark Circles? Puffiness? Tired Eyes? Not anymore! Say hello to brighter, refreshed under-eyes in just 8 weeks with our clinically tested Vitamin K + Retinol Eye Cream. ✨\n✅ Reduces dark circles & puffiness\n✅ Prevents blood vessel breakage\n✅ Infused with Vitamin K & Retinol for maximum repair\nThousands are already loving it! Are you next? Tap below & try it for yourself! ⬇️\nErase Dark Circles & Puffiness – Fast!\nYour under-eye glow-up starts NOW! Brighten, smooth, and refresh your skin with every use. Shop now!\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening",
+        "anti-ageing-firming",
+        "eye-care"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "quantified-proof",
+        "testimonial-social-proof"
+      ],
+      "claimTags": [
+        "clinical-claim",
+        "time-bound-result",
+        "absolute-or-guarantee",
+        "therapeutic-biological"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "time-bound-result",
+        "absolute-or-guarantee",
+        "therapeutic-biological"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E032",
+      "familyIds": [
+        "META-C030"
+      ],
+      "libraryIds": [
+        "1551026110079477"
+      ],
+      "imageFiles": [
+        "1551026110079477-01.jpg"
+      ],
+      "canonicalImage": "1551026110079477-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Struggling with redness, sensitivity, or a weakened skin barrier?\nThe Minimalist Barrier Repair Routine delivers real results with high-performing actives:\nOat Extract for gentle cleansing\n5% Niacinamide to repair damaged skin\nVitamin B12 Complex to calm inflammation\nSimple. Effective. Backed by science.\nCleanse. Treat. Moisturize. Restore confidence in your skin.\nEarn Cashback! Limited Time offer on kits!\nRestore, Soothe, Strengthen — Your Skin Barrier Deserves It\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "barrier-sensitive",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E033",
+      "familyIds": [
+        "META-C002"
+      ],
+      "libraryIds": [
+        "1558655245151582",
+        "1021330090334834"
+      ],
+      "imageFiles": [
+        "1558655245151582-01.jpg",
+        "1021330090334834-01.jpg"
+      ],
+      "canonicalImage": "1558655245151582-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026",
+        "7 Jun 2026"
+      ],
+      "associatedCopy": "Meet your summer skincare essential.\nMinimalist SPF 50 does double duty as a powerful, broad-spectrum sunscreen and a lightweight moisturizer.\n- In-vivo tested for guaranteed UV safety\n- Absolutely zero white cast\n- Packed with Niacinamide & Vitamins B5 + F\nDitch the greasy layers and simplify your routine today.\nBestselling Sunscreen For Summer\nLightweight, multi-vitamin formula.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "sun-protection",
+        "hydration-moisturising"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "seasonal-problem-solution",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "absolute-or-guarantee"
+      ],
+      "evidenceReviewNeeded": [
+        "absolute-or-guarantee"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E034",
+      "familyIds": [
+        "META-C031"
+      ],
+      "libraryIds": [
+        "1571114231310679"
+      ],
+      "imageFiles": [
+        "1571114231310679-01.jpg"
+      ],
+      "canonicalImage": "1571114231310679-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Struggling with breakouts, blackheads, or oily skin?\nThis 4-step, dermatologist-backed routine targets acne at every stage — and the Salicylic Acid 2% Serum is the real game-changer.\nStep 1: Cleanse\nSalicylic + LHA clears surface buildup and unclogs pores from the start.\nStep 2: Treat\nOur hero step — Salicylic Acid 2% Serum goes deeper to exfoliate inside pores, reduce blackheads, and calm active acne.\nPowered by White Horehound & EGCG for clinically proven results:\n- 50% reduction in blackheads in just 28 days\n- Controls excess oil\n- Prevents future breakouts\nStep 3: Moisturise\nB12 + Repair Complex heals and strengthens your skin barrier — essential after exfoliation.\nStep 4: Protect\nSPF 50 Light Fluid shields your skin from sun-triggered acne and dark spots.\nTry the full routine and finally get control over acne — without the guesswork.\nFrom Clogged Pores to Clear Skin – Fast\nEarn Cashback on every Purchase\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "sun-protection",
+        "barrier-sensitive",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "dermatologist-authority",
+        "numeric-outcome",
+        "time-bound-result",
+        "therapeutic-biological",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "dermatologist-authority",
+        "numeric-outcome",
+        "time-bound-result",
+        "therapeutic-biological",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E035",
+      "familyIds": [
+        "META-C032"
+      ],
+      "libraryIds": [
+        "1578756280490721"
+      ],
+      "imageFiles": [
+        "1578756280490721-01.jpg"
+      ],
+      "canonicalImage": "1578756280490721-01.jpg",
+      "sourceStartDates": [
+        "25 Jun 2026"
+      ],
+      "associatedCopy": "Monsoon humidity vs. your hair? Make it a fair fight.\nThe Minimalist Frizz Control Complex SPF 30 is your non-greasy, daily essential to tame stubborn frizz, block out moisture-heavy air, and protect your hair from UV damage. Just a few drops for instantly smooth, glossy, and manageable hair—no matter how high the humidity climbs.\nThe Ultimate Monsoon Hair Shield\nFrizz Control + SPF 30 for smooth, protected hair\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "sun-protection",
+        "hair-repair-frizz"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "seasonal-problem-solution"
+      ],
+      "claimTags": [],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E036",
+      "familyIds": [
+        "META-C033"
+      ],
+      "libraryIds": [
+        "1578993020436450"
+      ],
+      "imageFiles": [
+        "1578993020436450-01.jpg"
+      ],
+      "canonicalImage": "1578993020436450-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Frizz-Free, Stronger Hair in 3 Steps.\nRepair damage, smooth cuticles & protect from UV — all in one powerful routine.\nStep 1: Cleanse with Bond-Repair Shampoo\nStep 2: Deep Repair with Bond-Repair Mask\nStep 3: Shield & Smooth with Frizz Control Serum (SPF 30)\nHealthier, shinier hair starts with science.\nMinimalist Hair Repair Ritual Kit — because real repair is a routine.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less",
+      "callToAction": null,
+      "productCategories": [
+        "sun-protection",
+        "hair-repair-frizz",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E037",
+      "familyIds": [
+        "META-C033"
+      ],
+      "libraryIds": [
+        "1578993020436450"
+      ],
+      "imageFiles": [
+        "1578993020436450-02.jpg"
+      ],
+      "canonicalImage": "1578993020436450-02.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Frizz-Free, Stronger Hair in 3 Steps.\nRepair damage, smooth cuticles & protect from UV — all in one powerful routine.\nStep 1: Cleanse with Bond-Repair Shampoo\nStep 2: Deep Repair with Bond-Repair Mask\nStep 3: Shield & Smooth with Frizz Control Serum (SPF 30)\nHealthier, shinier hair starts with science.\nMinimalist Hair Repair Ritual Kit — because real repair is a routine.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less",
+      "callToAction": null,
+      "productCategories": [
+        "sun-protection",
+        "hair-repair-frizz",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E038",
+      "familyIds": [
+        "META-C033"
+      ],
+      "libraryIds": [
+        "1578993020436450"
+      ],
+      "imageFiles": [
+        "1578993020436450-03.jpg"
+      ],
+      "canonicalImage": "1578993020436450-03.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Frizz-Free, Stronger Hair in 3 Steps.\nRepair damage, smooth cuticles & protect from UV — all in one powerful routine.\nStep 1: Cleanse with Bond-Repair Shampoo\nStep 2: Deep Repair with Bond-Repair Mask\nStep 3: Shield & Smooth with Frizz Control Serum (SPF 30)\nHealthier, shinier hair starts with science.\nMinimalist Hair Repair Ritual Kit — because real repair is a routine.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less",
+      "callToAction": null,
+      "productCategories": [
+        "sun-protection",
+        "hair-repair-frizz",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E039",
+      "familyIds": [
+        "META-C033"
+      ],
+      "libraryIds": [
+        "1578993020436450"
+      ],
+      "imageFiles": [
+        "1578993020436450-04.jpg"
+      ],
+      "canonicalImage": "1578993020436450-04.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Frizz-Free, Stronger Hair in 3 Steps.\nRepair damage, smooth cuticles & protect from UV — all in one powerful routine.\nStep 1: Cleanse with Bond-Repair Shampoo\nStep 2: Deep Repair with Bond-Repair Mask\nStep 3: Shield & Smooth with Frizz Control Serum (SPF 30)\nHealthier, shinier hair starts with science.\nMinimalist Hair Repair Ritual Kit — because real repair is a routine.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less\nBEMINIMALIST.CO\nEarn Cashback! Limited Time Offer on Kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now\nFrizz-Free Results in 3 Uses or Less",
+      "callToAction": null,
+      "productCategories": [
+        "sun-protection",
+        "hair-repair-frizz",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E040",
+      "familyIds": [
+        "META-C034"
+      ],
+      "libraryIds": [
+        "1601372358661756"
+      ],
+      "imageFiles": [
+        "1601372358661756-01.jpg"
+      ],
+      "canonicalImage": "1601372358661756-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Minimalist Aquaporin Booster 05% Cleanser\nHydrate As You Cleanse\nA gentle, water-based cleanser powered by 5% Aquaporin Boosters to deeply hydrate while washing away dirt and impurities. Formulated with humectants that enhance water movement within the skin—perfect for dry and dehydrated skin types.\nWhat Makes It Special:\nNon-drying formula that restores skin moisture\nBoosts hydration by activating aquaporin channels\nLightweight gel texture, ideal for daily use\nClean. Hydrate. Refresh.\nBy Minimalist — Skincare rooted in science.\nBEMINIMALIST.CO\nReward: Cashback\nBrighten, Exfoliate, Glow\nShop now",
+      "callToAction": "Shop now",
+      "productCategories": [
+        "pigmentation-brightening",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E041",
+      "familyIds": [
+        "META-C001"
+      ],
+      "libraryIds": [
+        "1630297249103116"
+      ],
+      "imageFiles": [
+        "1630297249103116-01.jpg"
+      ],
+      "canonicalImage": "1630297249103116-01.jpg",
+      "sourceStartDates": [
+        "15 Jul 2026"
+      ],
+      "associatedCopy": "LINK.BLINKIT.COM\nMinimalistinc\nShop online for groceries and get your order delivered to your doorstep. Enjoy delivery of 30,000+ products with Blinkit\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [],
+      "creativeArchetypes": [],
+      "claimTags": [],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E042",
+      "familyIds": [
+        "META-C005"
+      ],
+      "libraryIds": [
+        "1631739695274016"
+      ],
+      "imageFiles": [
+        "1631739695274016-01.jpg"
+      ],
+      "canonicalImage": "1631739695274016-01.jpg",
+      "sourceStartDates": [
+        "13 Aug 2026"
+      ],
+      "associatedCopy": "Say goodbye to oiliness, acne breakouts, and uneven skin tone! 🛡️ Proper cleansing is the very first step to clear skin. Get the Minimalist Salicylic Acid + LHA 02% Acne Control Gel Cleanser delivered to your doorstep in minutes. Formulated with Zinc and Oat Extract to reduce excess oil without drying out your skin. Shop the sale now on Zepto! ⚡🛒\nZEPTO.COM\nMinimalistinc\nZepto is your next-door quick commerce app, delivering online groceries, fruits, vegetables, personal care, electronics & much more to you in just minutes.\nOrder Now",
+      "callToAction": "Order Now",
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "barrier-sensitive",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E043",
+      "familyIds": [
+        "META-C035"
+      ],
+      "libraryIds": [
+        "1666346887762261"
+      ],
+      "imageFiles": [
+        "1666346887762261-01.jpg"
+      ],
+      "canonicalImage": "1666346887762261-01.jpg",
+      "sourceStartDates": [
+        "29 Jul 2026"
+      ],
+      "associatedCopy": "Tired of stubborn dandruff that keeps coming back? Minimalist Anti-Dandruff Shampoo (3.5%) is here to rescue your scalp! Powered by science-backed ingredients, it fights dandruff at the root while keeping your hair fresh and healthy.\n✔ 3.5% Active Formula – Powered by Climbazole & Salicylic Acid to fight dandruff effectively.\n✔ Targets Dandruff at the Root – Eliminates fungi and soothes irritation for long-lasting relief.\n✔ Gentle Yet Powerful – Cleanses without drying out your scalp or hair.\n✔ Visible Results, Fast – Experience a noticeable reduction in flakes within weeks.\n✔ Science-Backed & Dermatologist Tested – Safe for all scalp types, including sensitive skin.\nShop Now & Enjoy Flake-Free Hair!\nBEMINIMALIST.CO\nNo More Flakes, Just Healthy Hair! Cashback awaits!\nHide Nothing\nShop now",
+      "callToAction": "Shop now",
+      "productCategories": [
+        "acne-oil-control",
+        "barrier-sensitive",
+        "dandruff-scalp",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "science-authority",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "science-authority",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E044",
+      "familyIds": [
+        "META-C010"
+      ],
+      "libraryIds": [
+        "1679552263114084"
+      ],
+      "imageFiles": [
+        "1679552263114084-01.jpg"
+      ],
+      "canonicalImage": "1679552263114084-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Elevate your skincare with Minimalist Vitamin C 10% Serum! 🌟 Target dull skin, UV damage, dark spots, and uneven tone for a glowing, radiant complexion. Plus, enjoy 10% Mcash on every purchase. Glow and save today.\nRadiant Skin & 10% Mcash\nBrighten your skin and your day with Minimalist Vitamin C 10% Serum. Target key skin concerns and get rewarded with 10% Mcash on every order\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E045",
+      "familyIds": [
+        "META-C012"
+      ],
+      "libraryIds": [
+        "1689065935717430"
+      ],
+      "imageFiles": [
+        "1689065935717430-01.jpg"
+      ],
+      "canonicalImage": "1689065935717430-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Reveal brighter, healthier skin with Minimalist Vitamin C + E + Ferulic Serum. This high-efficacy formula targets dullness, dark spots, and UV damage without feeling heavy or sticky.\n- 16% Vitamin C brightens and fades pigmentation\n- Ferulic Acid evens skin tone and fights UV damage\n- Fullerenes reduce photoaging and enhance antioxidant protection\n- Improves texture and supports overall skin health\n- Lightweight, fast-absorbing, and non-sticky\nShop now for science-backed skincare that works.\n#Minimalist #BrighteningSerum #VitaminC #FerulicAcid #GlowingSkin #CleanBeauty\nEarn Cashback on every purchase\nMinimalist - Transparent, Hide Nothing\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E046",
+      "familyIds": [
+        "META-C003"
+      ],
+      "libraryIds": [
+        "1694736281737007",
+        "2040345663535446",
+        "2089282301970607",
+        "2081652076120042"
+      ],
+      "imageFiles": [
+        "1694736281737007-01.jpg",
+        "2040345663535446-01.jpg",
+        "2089282301970607-01.jpg",
+        "2081652076120042-01.jpg"
+      ],
+      "canonicalImage": "1694736281737007-01.jpg",
+      "sourceStartDates": [
+        "8 Jul 2026"
+      ],
+      "associatedCopy": "Your skin doesn’t just need actives — it needs H₂O too.\nBuy any 2 Minimalist products and get our hydration-friendly bottle absolutely FREE.\nBecause real skin health starts from within\nActives for Skin. H₂O for Within\nSupport your actives with hydration. Buy any 2 products and get a water bottle worth ₹599, free.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hydration-moisturising"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E047",
+      "familyIds": [
+        "META-C036"
+      ],
+      "libraryIds": [
+        "1698731678103428"
+      ],
+      "imageFiles": [
+        "1698731678103428-01.jpg"
+      ],
+      "canonicalImage": "1698731678103428-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Minimalist Light Fluid SPF 50\nLight on Skin, Strong on Protection\nDesigned for oily, combination, and acne-prone skin, this oil-free sunscreen offers broad-spectrum SPF 50 protection with a weightless finish.\nKey Benefits:\nOil-free and non-comedogenic\nClinically tested (in-vivo & in-vitro)\nWater-resistant up to 80 minutes\nMinimalist. Skincare that works.\nBEMINIMALIST.CO\nGuaranteed cashback\nMinimalist. Science-led skincare you can trust.\nShop now",
+      "callToAction": "Shop now",
+      "productCategories": [
+        "acne-oil-control",
+        "sun-protection"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "quantified-proof"
+      ],
+      "claimTags": [
+        "clinical-claim",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E048",
+      "familyIds": [
+        "META-C037"
+      ],
+      "libraryIds": [
+        "1700335027907222"
+      ],
+      "imageFiles": [
+        "1700335027907222-01.jpg"
+      ],
+      "canonicalImage": "1700335027907222-01.jpg",
+      "sourceStartDates": [
+        "24 Jul 2026"
+      ],
+      "associatedCopy": "Your skin isn’t generic; your skincare shouldn’t be either.\nCreate a custom bundle based on your skin type & concerns.Pick what your skin actually needs, skip what it doesn’t.\n- Made for All skin type.\n- Beginner-friendly routines\n- Science-backed formulas because every skin is unique.\nBEMINIMALIST.CO\nMinimalistinc\nWe believe our products should be accessible to all, but we will never compromise on quality, ensuring only the best products reach you. Our products are priced to allow you to test and play with ingredients to build your perfect skincare or haircare routine, for your ever changing needs.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "science-authority"
+      ],
+      "evidenceReviewNeeded": [
+        "science-authority"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E049",
+      "familyIds": [
+        "META-C011"
+      ],
+      "libraryIds": [
+        "1702757260767060",
+        "1041126368361580"
+      ],
+      "imageFiles": [
+        "1702757260767060-01.jpg",
+        "1041126368361580-02.jpg"
+      ],
+      "canonicalImage": "1702757260767060-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Over 80% of users noticed visibly calmer, stronger skin in just 60 days.*\nThe Minimalist Barrier Repair Routine is powered by:\n0.6% Oat Extract — gentle, non-stripping cleanse\n5% Niacinamide — clinically proven to repair skin barrier\n5.5% B12 Repair Complex — reduces redness and soothes inflammation\nDesigned for sensitive, stressed, and compromised skin.\n3 steps. 2 minutes. 1 visible transformation.\n*Based on customer feedback and product testing.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days",
+      "callToAction": null,
+      "productCategories": [
+        "barrier-sensitive",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof",
+        "testimonial-social-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E050",
+      "familyIds": [
+        "META-C011"
+      ],
+      "libraryIds": [
+        "1702757260767060",
+        "1041126368361580"
+      ],
+      "imageFiles": [
+        "1702757260767060-02.jpg",
+        "1041126368361580-03.jpg"
+      ],
+      "canonicalImage": "1702757260767060-02.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Over 80% of users noticed visibly calmer, stronger skin in just 60 days.*\nThe Minimalist Barrier Repair Routine is powered by:\n0.6% Oat Extract — gentle, non-stripping cleanse\n5% Niacinamide — clinically proven to repair skin barrier\n5.5% B12 Repair Complex — reduces redness and soothes inflammation\nDesigned for sensitive, stressed, and compromised skin.\n3 steps. 2 minutes. 1 visible transformation.\n*Based on customer feedback and product testing.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days",
+      "callToAction": null,
+      "productCategories": [
+        "barrier-sensitive",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof",
+        "testimonial-social-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E051",
+      "familyIds": [
+        "META-C011"
+      ],
+      "libraryIds": [
+        "1702757260767060",
+        "1041126368361580"
+      ],
+      "imageFiles": [
+        "1702757260767060-03.jpg",
+        "1041126368361580-04.jpg"
+      ],
+      "canonicalImage": "1702757260767060-03.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Over 80% of users noticed visibly calmer, stronger skin in just 60 days.*\nThe Minimalist Barrier Repair Routine is powered by:\n0.6% Oat Extract — gentle, non-stripping cleanse\n5% Niacinamide — clinically proven to repair skin barrier\n5.5% B12 Repair Complex — reduces redness and soothes inflammation\nDesigned for sensitive, stressed, and compromised skin.\n3 steps. 2 minutes. 1 visible transformation.\n*Based on customer feedback and product testing.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days",
+      "callToAction": null,
+      "productCategories": [
+        "barrier-sensitive",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof",
+        "testimonial-social-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E052",
+      "familyIds": [
+        "META-C011"
+      ],
+      "libraryIds": [
+        "1702757260767060",
+        "1041126368361580"
+      ],
+      "imageFiles": [
+        "1702757260767060-04.jpg",
+        "1041126368361580-05.jpg"
+      ],
+      "canonicalImage": "1702757260767060-04.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Over 80% of users noticed visibly calmer, stronger skin in just 60 days.*\nThe Minimalist Barrier Repair Routine is powered by:\n0.6% Oat Extract — gentle, non-stripping cleanse\n5% Niacinamide — clinically proven to repair skin barrier\n5.5% B12 Repair Complex — reduces redness and soothes inflammation\nDesigned for sensitive, stressed, and compromised skin.\n3 steps. 2 minutes. 1 visible transformation.\n*Based on customer feedback and product testing.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days",
+      "callToAction": null,
+      "productCategories": [
+        "barrier-sensitive",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof",
+        "testimonial-social-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E053",
+      "familyIds": [
+        "META-C011"
+      ],
+      "libraryIds": [
+        "1702757260767060",
+        "1041126368361580"
+      ],
+      "imageFiles": [
+        "1702757260767060-05.jpg",
+        "1041126368361580-01.jpg"
+      ],
+      "canonicalImage": "1702757260767060-05.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Over 80% of users noticed visibly calmer, stronger skin in just 60 days.*\nThe Minimalist Barrier Repair Routine is powered by:\n0.6% Oat Extract — gentle, non-stripping cleanse\n5% Niacinamide — clinically proven to repair skin barrier\n5.5% B12 Repair Complex — reduces redness and soothes inflammation\nDesigned for sensitive, stressed, and compromised skin.\n3 steps. 2 minutes. 1 visible transformation.\n*Based on customer feedback and product testing.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nClinically Backed: 80% Saw Calmer Skin in 60 Days\nShop Now\nClinically Backed: 80% Saw Calmer Skin in 60 Days",
+      "callToAction": null,
+      "productCategories": [
+        "barrier-sensitive",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof",
+        "testimonial-social-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "numeric-outcome",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E054",
+      "familyIds": [
+        "META-C038"
+      ],
+      "libraryIds": [
+        "1713183573258042"
+      ],
+      "imageFiles": [
+        "1713183573258042-01.jpg"
+      ],
+      "canonicalImage": "1713183573258042-01.jpg",
+      "sourceStartDates": [
+        "25 Jun 2026"
+      ],
+      "associatedCopy": "Is your regular shampoo failing you this monsoon?\nHigh humidity creates the perfect breeding ground for Malassezia (the fungus responsible for dandruff).\nUpgrade your routine with our targeted Anti-Dandruff Serum. Formulated with CPH Complex + Oligopeptide, it doesn't just wash away flakes temporarily—it treats the root cause of itching and irritation.\n- Lightweight & non-sticky\n- Suitable for all scalp types\n- Visible results\nSay Goodbye to Monsoon Flakes\nShop Minimalist Anti-Dandruff Serum today\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "barrier-sensitive",
+        "dandruff-scalp"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "seasonal-problem-solution",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "therapeutic-biological"
+      ],
+      "evidenceReviewNeeded": [
+        "therapeutic-biological"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E055",
+      "familyIds": [
+        "META-C014"
+      ],
+      "libraryIds": [
+        "1723885332163508"
+      ],
+      "imageFiles": [
+        "1723885332163508-01.jpg"
+      ],
+      "canonicalImage": "1723885332163508-01.jpg",
+      "sourceStartDates": [
+        "28 Jul 2026"
+      ],
+      "associatedCopy": "Elevate your skincare with Minimalist Vitamin C 10% Serum!\n-  Target dull skin\n-  Protects from UV damage\n-  Fixes dark spots, and uneven tone for a glowing, radiant complexion.\nPlus, earn Cashback on every purchase. Glow and save today.\nReward: Cashback\nBrighten your Skin\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E056",
+      "familyIds": [
+        "META-C039"
+      ],
+      "libraryIds": [
+        "1730877928245550"
+      ],
+      "imageFiles": [
+        "1730877928245550-01.jpg"
+      ],
+      "canonicalImage": "1730877928245550-01.jpg",
+      "sourceStartDates": [
+        "25 Jun 2026"
+      ],
+      "associatedCopy": "Rain outside, hairfall inside?  Monsoon humidity can severely weaken your hair roots, leading to extra breakage and shedding every time you detangle.\nNourish your roots and protect your strands with Minimalist Hair Growth Actives 18% Serum. Just a few drops a day helps reduce hairfall, activates hair stem cells, and boosts overall density.\nNourish Roots, Prevent Hairfall\nPowerhouse blend of Capixyl, Redensyl & Procapil\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hair-growth-anti-grey"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "seasonal-problem-solution",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "therapeutic-biological"
+      ],
+      "evidenceReviewNeeded": [
+        "therapeutic-biological"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E057",
+      "familyIds": [
+        "META-C001"
+      ],
+      "libraryIds": [
+        "1942914633083773"
+      ],
+      "imageFiles": [
+        "1942914633083773-01.jpg"
+      ],
+      "canonicalImage": "1942914633083773-01.jpg",
+      "sourceStartDates": [
+        "15 Jul 2026"
+      ],
+      "associatedCopy": "LINK.BLINKIT.COM\nMinimalistinc\nShop online for groceries and get your order delivered to your doorstep. Enjoy delivery of 30,000+ products with Blinkit\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [],
+      "creativeArchetypes": [],
+      "claimTags": [],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E058",
+      "familyIds": [
+        "META-C040"
+      ],
+      "libraryIds": [
+        "1979874489349335"
+      ],
+      "imageFiles": [
+        "1979874489349335-01.jpg"
+      ],
+      "canonicalImage": "1979874489349335-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Revive dry, flaky skin with this clinically proven hydration kit that deeply nourishes, restores skin barrier function, and leaves your skin soft, smooth, and glowing.\n• Aquaporin Booster Cleanser (0.5%) – gently cleanses without stripping essential moisture\n• Hyaluronic + PGA Serum (2%) – provides multi-level hydration and boosts water retention\n• Marula Oil Moisturizer (0.5%) – rich in antioxidants and vitamins for intense nourishment\n• Strengthens the skin barrier and prevents moisture loss\n• Ideal for dry, dehydrated, or sensitized skin\n• Fragrance-free. Dermatologist-tested. Powered by science\nEarn Cashback! Limited Time offer on kits!\nGoodbye Dryness. Hello Hydrated Glow.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening",
+        "barrier-sensitive",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "dermatologist-authority",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E059",
+      "familyIds": [
+        "META-C012"
+      ],
+      "libraryIds": [
+        "2077897439821938"
+      ],
+      "imageFiles": [
+        "2077897439821938-01.jpg"
+      ],
+      "canonicalImage": "2077897439821938-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Reveal brighter, healthier skin with Minimalist Vitamin C + E + Ferulic Serum. This high-efficacy formula targets dullness, dark spots, and UV damage without feeling heavy or sticky.\n- 16% Vitamin C brightens and fades pigmentation\n- Ferulic Acid evens skin tone and fights UV damage\n- Fullerenes reduce photoaging and enhance antioxidant protection\n- Improves texture and supports overall skin health\n- Lightweight, fast-absorbing, and non-sticky\nShop now for science-backed skincare that works.\n#Minimalist #BrighteningSerum #VitaminC #FerulicAcid #GlowingSkin #CleanBeauty\nEarn Cashback on every purchase\nMinimalist - Transparent, Hide Nothing\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E060",
+      "familyIds": [
+        "META-C041"
+      ],
+      "libraryIds": [
+        "2109457459783680"
+      ],
+      "imageFiles": [
+        "2109457459783680-01.jpg"
+      ],
+      "canonicalImage": "2109457459783680-01.jpg",
+      "sourceStartDates": [
+        "11 Aug 2026"
+      ],
+      "associatedCopy": "Stronger Hair Starts in Just 1 Wash\nClinically backed with 3.5% Maleic Bond Repair Complex, this shampoo targets damage from within and restores hair strength from the first use.\nKey Benefits:\n- Increases tensile strength by 13.1% after 1st wash\n- Reduces breakage by up to 28% in 2 weeks\n- Repairs broken hair bonds with maleic acid\n- Nourishes deeply with Vitamin B5 and ceramides\n- Improves resistance to heat and chemical damage over time\nShop Now and say goodbye to fragile locks\nRepair Damage in Just 1 Wash with 3.5% Bond Complex\nEarn cashback on every purchase\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hydration-moisturising",
+        "hair-repair-frizz"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "quantified-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "time-bound-result",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E061",
+      "familyIds": [
+        "META-C006"
+      ],
+      "libraryIds": [
+        "2256945501508319"
+      ],
+      "imageFiles": [
+        "2256945501508319-01.jpg"
+      ],
+      "canonicalImage": "2256945501508319-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "Say goodbye to clogged pores, rough patches, and uneven skin tone. The Minimalist 8% Glycolic Acid Exfoliating Liquid is your all-in-one solution for glowing skin. Gently exfoliates to improve texture, fade dark spots on elbows, underarms, and knees, and even helps with scalp buildup. Dermatologically tested, safe for daily use.\nEarn Cashback on every purchase\nMulti-purpose exfoliating toner for face, body, and scalp care.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "pigmentation-brightening",
+        "dandruff-scalp",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "dermatologist-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E062",
+      "familyIds": [
+        "META-C001"
+      ],
+      "libraryIds": [
+        "2298049150732040",
+        "881886774987581",
+        "1058556190224321"
+      ],
+      "imageFiles": [
+        "2298049150732040-01.jpg",
+        "881886774987581-01.jpg",
+        "1058556190224321-01.jpg"
+      ],
+      "canonicalImage": "2298049150732040-01.jpg",
+      "sourceStartDates": [
+        "15 Jul 2026",
+        "4 Jul 2026",
+        "8 Sep 2026"
+      ],
+      "associatedCopy": "LINK.BLINKIT.COM\nMinimalistinc\nShop online for groceries and get your order delivered to your doorstep. Enjoy delivery of 30,000+ products with Blinkit\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [],
+      "creativeArchetypes": [],
+      "claimTags": [],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E063",
+      "familyIds": [
+        "META-C042"
+      ],
+      "libraryIds": [
+        "2315278469241947"
+      ],
+      "imageFiles": [
+        "2315278469241947-01.jpg"
+      ],
+      "canonicalImage": "2315278469241947-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Reveal Your Natural Glow with Minimalist\nTired of dull, uneven skin? Discover the clinically proven Glow Boosting Routine from Minimalist. Designed to brighten, treat, and protect—backed by science, made for real results.\nStep 1: Cleanse – Alpha Lipoic + Glycolic 07%\nGently exfoliates and brightens the skin.\nStep 2: Treat – Vitamin C 10% Serum\nBoosts glow, evens skin tone, and reduces dark spots.\nStep 3: Protect – Light Fluid SPF 50\nHigh-protection sunscreen with PA++++ to prevent sun damage.\nMinimal ingredients. Maximum results.\nFragrance-free. Dermatologically tested. For all skin types.\nShop now and unlock visibly healthier, glowing skin.\nEarn Cashback! Limited Time offer on kits!\nReduce Dullness and Boost Your Natural Radiance\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening",
+        "sun-protection",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "dermatologist-authority",
+        "science-authority",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "dermatologist-authority",
+        "science-authority",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E064",
+      "familyIds": [
+        "META-C014"
+      ],
+      "libraryIds": [
+        "2325873714613928"
+      ],
+      "imageFiles": [
+        "2325873714613928-01.jpg"
+      ],
+      "canonicalImage": "2325873714613928-01.jpg",
+      "sourceStartDates": [
+        "28 Jul 2026"
+      ],
+      "associatedCopy": "Elevate your skincare with Minimalist Vitamin C 10% Serum!\n-  Target dull skin\n-  Protects from UV damage\n-  Fixes dark spots, and uneven tone for a glowing, radiant complexion.\nPlus, earn Cashback on every purchase. Glow and save today.\nReward: Cashback\nBrighten your Skin\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "pigmentation-brightening"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E065",
+      "familyIds": [
+        "META-C043"
+      ],
+      "libraryIds": [
+        "2409542152889169"
+      ],
+      "imageFiles": [
+        "2409542152889169-01.jpg"
+      ],
+      "canonicalImage": "2409542152889169-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "An everyday moisturizer for hydrating, nourishing and repairing skin. A lightweight, oil-free product with high concentration of Vitamin B5 (Panthenol), formulated especially for oily / combination skin.\nRedeem mCash for additional discount!\nThis winter your skin needs extra care\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hydration-moisturising"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "seasonal-problem-solution"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E066",
+      "familyIds": [
+        "META-C044"
+      ],
+      "libraryIds": [
+        "2422634991565984"
+      ],
+      "imageFiles": [
+        "2422634991565984-01.jpg"
+      ],
+      "canonicalImage": "2422634991565984-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Reveal Your Natural Glow with Minimalist\nTired of dull, uneven skin? Discover the clinically proven Glow Boosting Routine from Minimalist. Designed to brighten, treat, and protect—backed by science, made for real results.\nStep 1: Cleanse – Alpha Lipoic + Glycolic 07%\nGently exfoliates and brightens the skin.\nStep 2: Treat – Vitamin C 10% Serum\nBoosts glow, evens skin tone, and reduces dark spots.\nStep 3: Protect – Light Fluid SPF 50\nHigh-protection sunscreen with PA++++ to prevent sun damage.\nMinimal ingredients. Maximum results.\nFragrance-free. Dermatologically tested. For all skin types.\nShop now and unlock visibly healthier, glowing skin.\nBEMINIMALIST.CO\nEarn Cashback! Limited Time offer on kits!\nReduce Dullness and Boost Your Natural Radiance\nShop now",
+      "callToAction": "Shop now",
+      "productCategories": [
+        "pigmentation-brightening",
+        "sun-protection",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "dermatologist-authority",
+        "science-authority",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "dermatologist-authority",
+        "science-authority",
+        "absolute-or-guarantee",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E067",
+      "familyIds": [
+        "META-C045"
+      ],
+      "libraryIds": [
+        "2488959061608431"
+      ],
+      "imageFiles": [
+        "2488959061608431-01.jpg"
+      ],
+      "canonicalImage": "2488959061608431-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Say goodbye to redness, sensitivity & a weakened skin barrier!\nOur Minimalist Barrier Repair Routine combines:\n• Gentle oat extract cleansing\n• 5% niacinamide for damaged skin repair\n• Vitamin B12 complex to calm inflammation\nBacked by science. Restore confidence in your skin! Get started now\nEarn Cashback! Limited Time offer on kits!\nRestore, Soothe, Strengthen — Your Skin Barrier Deserves It\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "barrier-sensitive"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E068",
+      "familyIds": [
+        "META-C004"
+      ],
+      "libraryIds": [
+        "2528592894325996"
+      ],
+      "imageFiles": [
+        "2528592894325996-01.jpg"
+      ],
+      "canonicalImage": "2528592894325996-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "Frizz-Free, Stronger Hair in 3 Steps.\nRepair damage, smooth cuticles & protect from UV — all in one powerful routine.\nStep 1: Cleanse with Bond-Repair Shampoo\nStep 2: Deep Repair with Bond-Repair Mask\nStep 3: Shield & Smooth with Frizz Control Serum (SPF 30)\nHealthier, shinier hair starts with science.\nMinimalist Hair Repair Ritual Kit — because real repair is a routine.\nEarn Cashback! Limited Time offer on kits!\nFrizz-Free Results in 3 Uses or Less\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "sun-protection",
+        "hair-repair-frizz",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E069",
+      "familyIds": [
+        "META-C007"
+      ],
+      "libraryIds": [
+        "2572695826504803"
+      ],
+      "imageFiles": [
+        "2572695826504803-01.jpg"
+      ],
+      "canonicalImage": "2572695826504803-01.jpg",
+      "sourceStartDates": [
+        "31 Jul 2026"
+      ],
+      "associatedCopy": "New Launch!!\nWhy choose between hair growth and anti-greying when you can do both?\nMeet the NEW Minimalist Hair Growth + Anti Grey 15.6% Serum. Science backed solution to fight premature greying while boosting hair density.\nNEW LAUNCH: Fight Premature Greying + Hair Loss\nFight Premature Greying in 1 Step\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hair-growth-anti-grey"
+      ],
+      "creativeArchetypes": [
+        "new-launch",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E070",
+      "familyIds": [
+        "META-C046"
+      ],
+      "libraryIds": [
+        "27462695426715869"
+      ],
+      "imageFiles": [
+        "27462695426715869-01.jpg"
+      ],
+      "canonicalImage": "27462695426715869-01.jpg",
+      "sourceStartDates": [
+        "25 Jun 2026"
+      ],
+      "associatedCopy": "Tired of hair that turns into a puffy, unruly mess the second you step outside? Severe humidity is the ultimate test for your hair strength.\nGet the ultimate monsoon shield with our Maleic Bond Repair Complex 05% Hair Serum. It offers a powerful dual-action formula that handles your two biggest rainy season complaints: it repairs damaged hair bonds while acting as an anti-frizz shield.\nGet smooth, resilient, and healthy hair that doesn't let the weather get the best of it.\nDon't Just Mask Frizz. Repair It\nFormulated with Maleic Acid, Amino Acids & Argan Oil\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hair-repair-frizz"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "seasonal-problem-solution"
+      ],
+      "claimTags": [
+        "ingredient-concentration"
+      ],
+      "evidenceReviewNeeded": [],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E071",
+      "familyIds": [
+        "META-C047"
+      ],
+      "libraryIds": [
+        "3897957970511094"
+      ],
+      "imageFiles": [
+        "3897957970511094-01.jpg"
+      ],
+      "canonicalImage": "3897957970511094-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "An everyday moisturizer for hydrating, nourishing and repairing skin. A lightweight, oil-free product with high concentration of Vitamin B5 (Panthenol), formulated especially for oily / combination skin.\nHydration, Repair & Cashback\nReward: Cashback\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "hydration-moisturising"
+      ],
+      "creativeArchetypes": [
+        "offer-led"
+      ],
+      "claimTags": [
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E072",
+      "familyIds": [
+        "META-C002"
+      ],
+      "libraryIds": [
+        "4469729779968323",
+        "3260977900755724"
+      ],
+      "imageFiles": [
+        "4469729779968323-01.jpg",
+        "3260977900755724-01.jpg"
+      ],
+      "canonicalImage": "4469729779968323-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026",
+        "7 Jun 2026"
+      ],
+      "associatedCopy": "Meet your summer skincare essential.\nMinimalist SPF 50 does double duty as a powerful, broad-spectrum sunscreen and a lightweight moisturizer.\n- In-vivo tested for guaranteed UV safety\n- Absolutely zero white cast\n- Packed with Niacinamide & Vitamins B5 + F\nDitch the greasy layers and simplify your routine today.\nBestselling Sunscreen For Summer\nLightweight, multi-vitamin formula.\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "sun-protection",
+        "hydration-moisturising"
+      ],
+      "creativeArchetypes": [
+        "routine-kit",
+        "ingredient-mechanism",
+        "seasonal-problem-solution",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "absolute-or-guarantee"
+      ],
+      "evidenceReviewNeeded": [
+        "absolute-or-guarantee"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E073",
+      "familyIds": [
+        "META-C048"
+      ],
+      "libraryIds": [
+        "4611729382383720"
+      ],
+      "imageFiles": [
+        "4611729382383720-01.jpg"
+      ],
+      "canonicalImage": "4611729382383720-01.jpg",
+      "sourceStartDates": [
+        "29 Jul 2026"
+      ],
+      "associatedCopy": "Struggling with dandruff and an itchy scalp? See the difference in just 3 washes with Minimalist Anti-Dandruff Shampoo! ✨\n🔴 Before: Visible flakes, constant itching, and scalp buildup.\n🟢 After: Up to 100% reduction in flakes & itching, a clean and healthy scalp.\n🔴 Before: Dandruff-causing fungi & irritation.\n🟢 After: Climbazole + Salicylic Acid work to cleanse, soothe, and restore scalp health.\n🔴 Before: Harsh shampoos that strip moisture.\n🟢 After: Gentle yet powerful formula, safe for all hair types.\nExperience the transformation – Try it now!\nBEMINIMALIST.CO\nFlaky Scalp? Not Anymore! See the Difference in Just 3 Washes!\nTransparency is the key\nShop now",
+      "callToAction": "Shop now",
+      "productCategories": [
+        "acne-oil-control",
+        "barrier-sensitive",
+        "dandruff-scalp",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "quantified-proof",
+        "before-after",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "numeric-outcome",
+        "time-bound-result",
+        "absolute-or-guarantee",
+        "before-after"
+      ],
+      "evidenceReviewNeeded": [
+        "numeric-outcome",
+        "time-bound-result",
+        "absolute-or-guarantee",
+        "before-after"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E074",
+      "familyIds": [
+        "META-C009"
+      ],
+      "libraryIds": [
+        "4621909734800045"
+      ],
+      "imageFiles": [
+        "4621909734800045-01.jpg"
+      ],
+      "canonicalImage": "4621909734800045-01.jpg",
+      "sourceStartDates": [
+        "11 Jul 2026"
+      ],
+      "associatedCopy": "A simple, effective 3-step routine to fight acne at every stage.\n• Gently cleanses with Salicylic Acid + LHA\n• Targets breakouts with 2% Salicylic Acid serum\n• Calms and hydrates with Vitamin B5 10% moisturizer\nFragrance-free. Non-comedogenic. Backed by science.\nFor skin that feels clearer, calmer, and healthier.\nClinically Proven Care\nReward: Cashback\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "acne-oil-control",
+        "hydration-moisturising",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "ingredient-mechanism",
+        "quantified-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E075",
+      "familyIds": [
+        "META-C049"
+      ],
+      "libraryIds": [
+        "870778455827585"
+      ],
+      "imageFiles": [
+        "870778455827585-01.jpg"
+      ],
+      "canonicalImage": "870778455827585-01.jpg",
+      "sourceStartDates": [
+        "29 Jul 2026"
+      ],
+      "associatedCopy": "Say goodbye to dandruff with Minimalist Anti-Dandruff Shampoo (3.5%)—a powerful formula backed by science to fight flakes, itchiness, and scalp buildup.\n✔ Piroctone Olamine – Provides long-term protection from dandruff.\n✔ Climbazole – Fights dandruff-causing fungus at the root.\n✔ Salicylic Acid – Regulates sebum & prevents buildup for a healthier scalp.\n🔬 Clinically Proven | Gentle Yet Effective | Visible Results\nGet yours today & experience the difference!\nBEMINIMALIST.CO\nFlaky Scalp? Not Anymore! See the Difference in Just 3 Washes!\nTransparency is the key\nShop now",
+      "callToAction": "Shop now",
+      "productCategories": [
+        "acne-oil-control",
+        "dandruff-scalp"
+      ],
+      "creativeArchetypes": [
+        "ingredient-mechanism",
+        "quantified-proof",
+        "single-product-benefit"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "clinical-claim",
+        "science-authority",
+        "time-bound-result",
+        "absolute-or-guarantee",
+        "therapeutic-biological"
+      ],
+      "evidenceReviewNeeded": [
+        "clinical-claim",
+        "science-authority",
+        "time-bound-result",
+        "absolute-or-guarantee",
+        "therapeutic-biological"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E076",
+      "familyIds": [
+        "META-C050"
+      ],
+      "libraryIds": [
+        "896197086383625"
+      ],
+      "imageFiles": [
+        "896197086383625-01.jpg"
+      ],
+      "canonicalImage": "896197086383625-01.jpg",
+      "sourceStartDates": [
+        "28 Jul 2026"
+      ],
+      "associatedCopy": "VitaminB12 + NMF 03% Face Toner:\nA toner your routine was waiting for.\n+31.1% increase in skin’s water content\n-8.8% transepidermal water loss\nB12 to soothe & reduce irritation\nHydration that shows. Barrier care that lasts.\nShop the New Vitamin B12 + NMF 03% Toner today.\nNew Vitamin B12 + NMF Toner for Deep Hydration\nRedeem mCash for additional discount!\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [
+        "barrier-sensitive",
+        "hydration-moisturising"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "routine-kit",
+        "quantified-proof"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "numeric-outcome",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "numeric-outcome",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E077",
+      "familyIds": [
+        "META-C008"
+      ],
+      "libraryIds": [
+        "988080157427683",
+        "2180376532526722",
+        "1373569151356451"
+      ],
+      "imageFiles": [
+        "988080157427683-01.jpg",
+        "2180376532526722-01.jpg",
+        "1373569151356451-01.jpg"
+      ],
+      "canonicalImage": "988080157427683-01.jpg",
+      "sourceStartDates": [
+        "28 Jun 2026",
+        "8 Jul 2026"
+      ],
+      "associatedCopy": "Science-backed skincare that fits your budget.\nBuy any 2 Minimalist products, get a FREEBIE of your choice!\nSimply add your favorites to the cart, select coupon B2G3RDFREE and get the lowest priced item for free.\nBuy any 2 products and get a freebie of your choice\nLimited Time Offer!\nShop Now",
+      "callToAction": "Shop Now",
+      "productCategories": [],
+      "creativeArchetypes": [
+        "offer-led"
+      ],
+      "claimTags": [
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    },
+    {
+      "executionId": "META-E078",
+      "familyIds": [
+        "META-C051"
+      ],
+      "libraryIds": [
+        "993093336978376"
+      ],
+      "imageFiles": [
+        "993093336978376-01.jpg"
+      ],
+      "canonicalImage": "993093336978376-01.jpg",
+      "sourceStartDates": [
+        "22 Jun 2026"
+      ],
+      "associatedCopy": "This gel-based daily cleanser combines 7% Glycolic Acid and Alpha Lipoic Acid to gently exfoliate, clear buildup, and reveal visibly brighter, smoother skin.\nKey Benefits:\nGently removes dead skin cells, dirt, and oil\nHelps prevent free radical damage for healthy, glowing skin\nLightweight gel texture ideal for oily and combination skin\nYour daily brightening solution, powered by science.\nMinimalist. Skincare that does more.\nBEMINIMALIST.CO\nReward: Cashback\nBrighten, Exfoliate, Glow\nShop now",
+      "callToAction": "Shop now",
+      "productCategories": [
+        "pigmentation-brightening",
+        "cleansing-exfoliation"
+      ],
+      "creativeArchetypes": [
+        "offer-led",
+        "ingredient-mechanism"
+      ],
+      "claimTags": [
+        "ingredient-concentration",
+        "science-authority",
+        "offer-conditions"
+      ],
+      "evidenceReviewNeeded": [
+        "science-authority",
+        "offer-conditions"
+      ],
+      "tagStatus": "provisional-keyword-derived"
+    }
+  ]
+}
