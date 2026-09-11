@@ -7,13 +7,14 @@ Rule sources, evidence boundaries and revision history are maintained in
 is recorded in
 [04-product-page-validation.md](../research/04-product-page-validation.md).
 
-The scorer evaluates only Minimalist ads. It accepts either pasted ad text or a
-static image plus optional post copy. It always evaluates the ad against the
-same Minimalist standard; it does not infer a different brand from the input.
+The scorer evaluates only Minimalist ads. Its public input is a static image;
+generator handoffs also include the known creative copy and product context
+internally. It always evaluates the ad against the same Minimalist standard;
+it does not infer a different brand from the input.
 
-Its primary output is an actionable edit brief, not a scorecard. A marketer
-should be able to see what is off, where it is off, and the shortest path to a
-reviewable correction without having to interpret the rules themselves.
+Its primary output is a compact three-dimension scorecard. Every score includes
+a short explanation and one actionable correction line, so a marketer can see
+what is off and the shortest path to a reviewable correction.
 
 ## Scoring model
 
@@ -38,6 +39,26 @@ Each dimension receives one status:
 
 The overall verdict is the most restrictive dimension status. Scores do not
 cancel each other out: excellent tone cannot compensate for a risky claim.
+
+### Reviewer-facing 1–5 scores
+
+Statuses remain the internal safety control. The interface converts the
+findings within each dimension to an integer score independently; it does not
+calculate an overall or weighted-average score:
+
+- **5 — Clear:** no issue was detected within the scorer's evidence boundary.
+- **4 — Minor revision:** one low- or medium-severity revision was found.
+- **3 — Material revision:** one high-severity/evidence finding, or multiple
+  lower-severity findings, must be resolved.
+- **2 — Specialist/serious review:** human review or multiple serious findings
+  are required.
+- **1 — Block:** at least one block finding means the ad must not proceed.
+
+The score is deterministic and calculated after Gemini observations are mapped
+to the rule registry. Gemini does not choose the number. For every dimension,
+the interface shows `Why this score` and a single `Action` based on its
+highest-priority finding. A 5 still receives a preservation action so the
+marketer knows what should not change.
 
 ## Finding format
 

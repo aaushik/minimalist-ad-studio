@@ -4,15 +4,15 @@
 
 The scorer accepts either an uploaded static ad or a creative handed off from
 the generator. Both enter one `reviewAd` workflow and return the same
-action-oriented contract:
+action-oriented contract. The public result intentionally shows only:
 
-- overall publication decision;
-- policy/claims, brand-tone, and brand-language statuses;
-- atomic findings with the exact observed span or visual region;
-- what is off, why it matters, how to fix it, and a `done when` check;
-- suggested wording only when a safe rewrite is possible;
-- confidence, missing input, and the source basis for each finding;
-- a resubmission checklist and disclosed engine limitations.
+- a score out of 5 for policy/claims, brand tone, and brand language;
+- one short explanation for each score; and
+- one prominent action line for each score.
+
+The engine retains atomic findings, exact spans, source basis, confidence and
+missing-input data internally. `analyze.ts` deterministically converts those
+findings to the documented 1–5 rubric; Gemini never chooses the score.
 
 The overall decision is computed in code, not by the language model. Precedence
 is `Block` → `Human review` → `Evidence required` → `Revise` → `Ready for

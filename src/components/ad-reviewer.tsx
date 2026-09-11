@@ -2,7 +2,8 @@
 
 import { ChangeEvent, useId, useState } from "react";
 
-import type { ReviewInput, ReviewResult, ReviewStatus } from "@/lib/scoring/types";
+import { REVIEW_DIMENSIONS } from "@/lib/scoring/types";
+import type { ReviewDimension, ReviewInput, ReviewResult } from "@/lib/scoring/types";
 
 type AdReviewerProps = {
   input: ReviewInput;
@@ -13,20 +14,10 @@ type AdReviewerProps = {
   onReview: (input: ReviewInput) => Promise<void>;
 };
 
-const STATUS_LABELS: Record<ReviewStatus, string> = {
-  pass: "Pass",
-  revise: "Revise",
-  evidence_required: "Evidence required",
-  human_review: "Human review",
-  block: "Block",
-};
-
-const VERDICT_LABELS: Record<ReviewResult["verdict"], string> = {
-  ready_for_reviewer_approval: "Ready for reviewer approval",
-  revise: "Revise and rescore",
-  evidence_required: "Evidence required",
-  human_review: "Human review required",
-  do_not_publish: "Do not publish",
+const DIMENSION_META: Record<ReviewDimension, { label: string; question: string }> = {
+  policy: { label: "Policy & claims", question: "Is the ad substantiated, compliant and legally safe?" },
+  tone: { label: "Brand tone", question: "Does it sound like Minimalist rather than a generic skincare ad?" },
+  language: { label: "Brand language", question: "Are its vocabulary, naming and claim structure on-brand?" },
 };
 
 export function AdReviewer({
@@ -110,83 +101,52 @@ export function AdReviewer({
 function ReviewOutput({ result }: { result: ReviewResult }) {
   return (
     <div className="review-results">
-      <section className={`verdict-card status-${statusFromVerdict(result.verdict)}`}>
-        <p>Overall decision</p>
-        <h2>{VERDICT_LABELS[result.verdict]}</h2>
-        <span>{result.summary}</span>
+      <section className="scorecard-heading">
+        <div>
+          <p>Creative scorecard</p>
+          <h2>Three dimensions. Three clear actions.</h2>
+        </div>
+        <span>{result.engine === "gemini+rules" ? "Gemini vision + documented rules" : "Documented rules only"}</span>
       </section>
 
-      <div className="dimension-grid">
-        {Object.entries(result.dimensions).map(([dimension, status]) => (
-          <div className={`dimension-card status-${status}`} key={dimension}>
-            <span>{dimension === "policy" ? "Policy & claims" : `Brand ${dimension}`}</span>
-            <strong>{STATUS_LABELS[status]}</strong>
-          </div>
-        ))}
-      </div>
-
-      {result.findings.length ? (
-        <section className="findings-section">
-          <div className="result-heading">
-            <div>
-              <p>Fix first</p>
-              <h3>{result.findings.length} actionable {result.findings.length === 1 ? "finding" : "findings"}</h3>
-            </div>
-            <span>{result.engine === "gemini+rules" ? "Vision + rules" : "Rules only"}</span>
-          </div>
-          <div className="finding-list">
-            {result.findings.map((finding, index) => (
-              <article className="finding-card" key={finding.id}>
-                <header>
-                  <div><span>{index + 1}</span><b>{finding.ruleId} · {finding.ruleName}</b></div>
-                  <em className={`finding-status status-${finding.status}`}>{STATUS_LABELS[finding.status]}</em>
-                </header>
-                <dl>
-                  <div><dt>Where</dt><dd>{finding.location}</dd></div>
-                  <div><dt>Observed</dt><dd>“{finding.observed}”</dd></div>
-                  {finding.inference ? <div><dt>Inference</dt><dd>{finding.inference}</dd></div> : null}
-                  <div><dt>What’s off</dt><dd>{finding.whatIsOff}</dd></div>
-                  <div><dt>Why it matters</dt><dd>{finding.whyItMatters}</dd></div>
-                  <div className="fix-row"><dt>How to fix</dt><dd>{finding.howToFix}</dd></div>
-                  {finding.suggestedReplacement ? <div className="replacement-row"><dt>Try</dt><dd>“{finding.suggestedReplacement}”</dd></div> : null}
-                  <div><dt>Done when</dt><dd>{finding.doneWhen}</dd></div>
-                </dl>
-                <div className="finding-meta">
-                  <span>{finding.severity} severity · {finding.confidence} confidence</span>
-                  {finding.missingInput ? <span>Needs: {finding.missingInput}</span> : null}
-                  <span>Basis: {finding.sourceBasis}</span>
+      <section className="dimension-score-list" aria-label="Scores by dimension">
+        {REVIEW_DIMENSIONS.map((dimension, index) => {
+          const dimensionScore = result.dimensionScores[dimension];
+          const metadata = DIMENSION_META[dimension];
+          return (
+            <article className={`dimension-score-card score-${dimensionScore.score}`} key={dimension}>
+              <header>
+                <div className="dimension-title">
+                  <span>0{index + 1}</span>
+                  <div>
+                    <h3>{metadata.label}</h3>
+                    <p>{metadata.question}</p>
+                  </div>
                 </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      ) : (
-        <section className="no-findings">
-          <b>No rule violation was detected.</b>
-          <p>This is a first-pass screen, not final legal or claims approval.</p>
-        </section>
-      )}
-
-      {result.revisedCopy ? (
-        <section className="revised-copy">
-          <p>Suggested revision</p>
-          <blockquote>{result.revisedCopy}</blockquote>
-        </section>
-      ) : null}
-
-      {result.resubmissionChecklist.length ? (
-        <section className="checklist-card">
-          <h3>Ready to rescore when…</h3>
-          <ul>{result.resubmissionChecklist.map((item) => <li key={item}>{item}</li>)}</ul>
-        </section>
-      ) : null}
+                <div className="score-value" aria-label={`${dimensionScore.score} out of 5`}>
+                  <strong>{dimensionScore.score}</strong><span>/5</span>
+                </div>
+              </header>
+              <div className="score-explanation">
+                <span>Why this score</span>
+                <p>{dimensionScore.explanation}</p>
+              </div>
+              <div className="score-action">
+                <span>Action</span>
+                <p>{dimensionScore.action}</p>
+              </div>
+              {dimensionScore.ruleIds.length ? (
+                <small>Triggered rules: {dimensionScore.ruleIds.join(", ")}</small>
+              ) : null}
+            </article>
+          );
+        })}
+      </section>
 
       {result.limitations.length ? (
-        <details className="limitations">
-          <summary>Scorer limitations</summary>
-          <ul>{result.limitations.map((item) => <li key={item}>{item}</li>)}</ul>
-        </details>
+        <p className="scorer-note"><b>Note:</b> {result.limitations.join(" ")}</p>
       ) : null}
+      <p className="scorer-disclaimer">First-pass assistance only. Final claims, legal and brand approval stays with the reviewer.</p>
     </div>
   );
 }
@@ -195,8 +155,8 @@ function ReviewEmptyState() {
   return (
     <div className="review-empty">
       <span>02</span>
-      <h2>Your scorer output will appear here.</h2>
-      <p>It will identify the exact copy or visual area, explain the issue, and give a concrete fix and completion check.</p>
+      <h2>Your three scores will appear here.</h2>
+      <p>Each dimension gets a score out of 5, a short explanation and one clear action to take next.</p>
       <div><b>Policy & claims</b><b>Brand tone</b><b>Brand language</b></div>
     </div>
   );
@@ -210,12 +170,6 @@ function ReviewLoading() {
       <p>Checking visible copy, claims, tone, language, hierarchy and qualifications.</p>
     </div>
   );
-}
-
-function statusFromVerdict(verdict: ReviewResult["verdict"]): ReviewStatus {
-  if (verdict === "do_not_publish") return "block";
-  if (verdict === "ready_for_reviewer_approval") return "pass";
-  return verdict;
 }
 
 async function prepareImageForReview(file: File) {

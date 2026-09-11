@@ -13,9 +13,9 @@ and exports a PNG. **Send to scorer** renders that creative in memory, opens the
 Scorer tab and scores it automatically. Scorer also accepts an independently
 uploaded static ad.
 
-The review output is deliberately actionable rather than a single opaque
-number: it identifies the exact issue, explains why it matters, gives a fix and
-a completion check, and discloses evidence gaps and confidence.
+The scorer returns three independent scores out of 5: Policy & Claims, Brand
+Tone, and Brand Language. Each score includes a short reason and one prominent
+action line, while the documented rules determine the number.
 
 ## Run locally
 

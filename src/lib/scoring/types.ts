@@ -7,7 +7,8 @@ export const REVIEW_STATUSES = [
 ] as const;
 
 export type ReviewStatus = (typeof REVIEW_STATUSES)[number];
-export type ReviewDimension = "policy" | "tone" | "language";
+export const REVIEW_DIMENSIONS = ["policy", "tone", "language"] as const;
+export type ReviewDimension = (typeof REVIEW_DIMENSIONS)[number];
 export type Severity = "low" | "medium" | "high" | "critical";
 export type Confidence = "low" | "medium" | "high";
 
@@ -52,10 +53,18 @@ export type ReviewVerdict =
   | "human_review"
   | "do_not_publish";
 
+export type DimensionScore = {
+  score: 1 | 2 | 3 | 4 | 5;
+  explanation: string;
+  action: string;
+  ruleIds: string[];
+};
+
 export type ReviewResult = {
   verdict: ReviewVerdict;
   summary: string;
   dimensions: Record<ReviewDimension, ReviewStatus>;
+  dimensionScores: Record<ReviewDimension, DimensionScore>;
   extractedText: string;
   visualObservations: string[];
   findings: ReviewFinding[];
@@ -64,4 +73,3 @@ export type ReviewResult = {
   engine: "gemini+rules" | "rules-only";
   limitations: string[];
 };
-
