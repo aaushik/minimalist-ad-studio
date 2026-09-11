@@ -5,6 +5,8 @@ ad-review standard.
 
 **Live app:** <https://nudge-new-assignment.vercel.app>
 
+**Complete assignment submission:** [submission/](submission/README.md)
+
 ## Current status
 
 The generator accepts a Minimalist product URL, reads the store's public
