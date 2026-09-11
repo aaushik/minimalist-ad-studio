@@ -5,18 +5,32 @@ ad-review standard.
 
 ## Current status
 
-The Meta reference corpus, 22-page official product review, rule-provenance
-matrix, and version-zero scoring standard are ready for human review. The
-scorer and generator are not implemented yet.
+The first generator surface is implemented. It accepts a Minimalist product
+URL, reads the store's public product data and page metadata, composes an
+editable 1080 × 1080 Meta creative using the real product image, and exports a
+PNG. The scorer is the next implementation step.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open <http://localhost:3000>. No API key is needed for the generator.
+
+The happy path uses Minimalist's public Shopify product JSON endpoint. If the
+page read fails, the existing draft stays editable and the marketer can upload
+a product photograph manually.
 
 ## Working sequence
 
 1. Collect and review evidence.
 2. Agree on the Minimalist brand and claims standard.
-3. Create an evaluation set before implementing the scorer.
-4. Implement and test the scorer for static image and text ads.
-5. Implement product ingestion and the creative generator.
-6. Connect scoring to generation and decide export controls.
+3. Implement product ingestion and the first creative generator.
+4. Create a focused evaluation set before implementing the scorer.
+5. Implement the scorer for static image and text ads.
+6. Connect scoring to generation and apply the chosen review-state controls.
 7. Red-team the result and complete the submission documents.
 
 ## Evidence
