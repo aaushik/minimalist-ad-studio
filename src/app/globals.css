@@ -710,7 +710,7 @@ button {
 }
 
 .review-dropzone {
-  min-height: 255px;
+  min-height: 380px;
   margin-bottom: 11px;
   border: 1px dashed #aebcbe;
   border-radius: 16px;
@@ -752,7 +752,7 @@ button {
 
 .review-dropzone img {
   width: 100%;
-  height: 310px;
+  height: 430px;
   display: block;
   object-fit: contain;
 }
@@ -1231,6 +1231,14 @@ footer {
   .review-loading {
     min-height: 420px;
     padding: 40px 22px;
+  }
+
+  .review-dropzone {
+    min-height: 300px;
+  }
+
+  .review-dropzone img {
+    height: 340px;
   }
 
   .finding-card dl > div {

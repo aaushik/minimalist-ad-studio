@@ -50,7 +50,7 @@ type Status =
   | { kind: "error"; message: string };
 
 export function AdGenerator() {
-  const [activeSurface, setActiveSurface] = useState<"generate" | "review">("generate");
+  const [activeSurface, setActiveSurface] = useState<"generate" | "scorer">("generate");
   const [url, setUrl] = useState(EXAMPLE_URL);
   const [product, setProduct] = useState(EXAMPLE_PRODUCT);
   const [status, setStatus] = useState<Status>({
@@ -69,12 +69,12 @@ export function AdGenerator() {
   );
 
   useEffect(() => {
-    if (window.location.hash === "#review") setActiveSurface("review");
+    if (window.location.hash === "#scorer") setActiveSurface("scorer");
   }, []);
 
-  const showSurface = (surface: "generate" | "review") => {
+  const showSurface = (surface: "generate" | "scorer") => {
     setActiveSurface(surface);
-    window.history.replaceState(null, "", surface === "review" ? "#review" : window.location.pathname);
+    window.history.replaceState(null, "", surface === "scorer" ? "#scorer" : window.location.pathname);
   };
 
   const updateProduct = (field: keyof ProductCreative, value: string) => {
@@ -149,7 +149,7 @@ export function AdGenerator() {
   };
 
   const scoreCreative = async (input: ReviewInput) => {
-    showSurface("review");
+    showSurface("scorer");
     setReviewInput(input);
     setReviewError("");
     setIsReviewing(true);
@@ -212,13 +212,13 @@ export function AdGenerator() {
         </a>
         <div className="surface-tabs" aria-label="Product surfaces">
           <button className={`surface-tab ${activeSurface === "generate" ? "active" : ""}`} type="button" onClick={() => showSurface("generate")}>Generate</button>
-          <button className={`surface-tab ${activeSurface === "review" ? "active" : ""}`} type="button" onClick={() => showSurface("review")}>Review</button>
+          <button className={`surface-tab ${activeSurface === "scorer" ? "active" : ""}`} type="button" onClick={() => showSurface("scorer")}>Scorer</button>
         </div>
         <span className="prototype-label">Internal prototype</span>
       </header>
 
       <section className="hero" id="top">
-        <p className="kicker">{activeSurface === "generate" ? "Evidence-led creative production" : "Actionable creative review"}</p>
+        <p className="kicker">{activeSurface === "generate" ? "Evidence-led creative production" : "Actionable creative scoring"}</p>
         <h1>{activeSurface === "generate" ? "Turn a product page into a ready-to-review ad." : "See what’s off—and exactly how to fix it."}</h1>
         <p className="hero-copy">
           {activeSurface === "generate"
@@ -326,7 +326,7 @@ export function AdGenerator() {
                 type="button"
                 onClick={sendToScorer}
                 disabled={isExporting || !canExport}
-                title={canExport ? "Send this draft to Review" : "Complete the creative first"}
+                title={canExport ? "Send this draft to Scorer" : "Complete the creative first"}
               >
                 {isExporting ? "Preparing…" : "Send to scorer"}
                 <span aria-hidden="true">→</span>

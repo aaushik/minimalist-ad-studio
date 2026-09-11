@@ -5,7 +5,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Minimalist Ad Studio",
-  description: "Generate and review evidence-led Minimalist ad creative.",
+  description: "Generate and score evidence-led Minimalist ad creative.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

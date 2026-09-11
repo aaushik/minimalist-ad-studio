@@ -10,8 +10,8 @@ ad-review standard.
 The generator accepts a Minimalist product URL, reads the store's public
 product data and page metadata, composes an editable 1080 × 1080 Meta creative,
 and exports a PNG. **Send to scorer** renders that creative in memory, opens the
-Review tab and scores it automatically. Review also accepts an independently
-uploaded static ad plus optional post copy and product URL.
+Scorer tab and scores it automatically. Scorer also accepts an independently
+uploaded static ad.
 
 The review output is deliberately actionable rather than a single opaque
 number: it identifies the exact issue, explains why it matters, gives a fix and

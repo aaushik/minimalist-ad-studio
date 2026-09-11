@@ -49,19 +49,19 @@ export function AdReviewer({
     try {
       const imageDataUrl = await prepareImageForReview(file);
       setFileName(file.name);
-      onInputChange({ ...input, source: "upload", imageDataUrl, knownText: undefined });
+      onInputChange({ source: "upload", imageDataUrl });
     } catch (uploadError) {
       setImageError(uploadError instanceof Error ? uploadError.message : "That image could not be prepared.");
     }
   };
 
   return (
-    <section className="review-shell" aria-labelledby="review-title">
+    <section className="review-shell" aria-labelledby="scorer-title">
       <aside className="review-input-panel">
         <div className="step-heading">
           <span>01</span>
           <div>
-            <h2 id="review-title">Add a creative</h2>
+            <h2 id="scorer-title">Add a creative</h2>
             <p>Upload a static ad, or send the current generated ad here.</p>
           </div>
         </div>
@@ -70,7 +70,7 @@ export function AdReviewer({
           <input id={uploadId} type="file" accept="image/png,image/jpeg,image/webp" onChange={handleUpload} />
           {input.imageDataUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={input.imageDataUrl} alt="Creative selected for review" />
+            <img src={input.imageDataUrl} alt="Creative selected for scoring" />
           ) : (
             <div>
               <UploadIcon />
@@ -80,39 +80,16 @@ export function AdReviewer({
           )}
         </label>
         {fileName ? <p className="selected-file">Selected: {fileName}</p> : null}
-        {input.source === "generator" ? <p className="selected-file">Generated creative received and queued for review.</p> : null}
+        {input.source === "generator" ? <p className="selected-file">Generated creative received and queued for scoring.</p> : null}
         {imageError ? <p className="input-error">{imageError}</p> : null}
-
-        <label className="field">
-          <span>Post copy <small>optional</small></span>
-          <textarea
-            rows={5}
-            value={input.postCopy ?? ""}
-            onChange={(event) => onInputChange({ ...input, postCopy: event.target.value })}
-            placeholder="Paste the caption that will run with the ad…"
-          />
-        </label>
-
-        <label className="field">
-          <span>Product URL <small>optional context</small></span>
-          <input
-            type="url"
-            value={input.productContext?.url ?? ""}
-            onChange={(event) => onInputChange({
-              ...input,
-              productContext: { ...input.productContext, url: event.target.value || undefined },
-            })}
-            placeholder="https://beminimalist.co/products/…"
-          />
-        </label>
 
         <button
           className="primary-button"
           type="button"
           onClick={() => onReview(input)}
-          disabled={isReviewing || (!input.imageDataUrl && !input.postCopy?.trim())}
+          disabled={isReviewing || !input.imageDataUrl}
         >
-          {isReviewing ? "Reviewing creative…" : "Score this creative"}
+          {isReviewing ? "Scoring creative…" : "Score this creative"}
           <span aria-hidden="true">→</span>
         </button>
         <p className="review-privacy-note">
@@ -121,7 +98,7 @@ export function AdReviewer({
         {error ? <div className="status-message error"><span className="status-dot" />{error}</div> : null}
       </aside>
 
-      <section className="review-output-panel" aria-live="polite">
+      <section className="review-output-panel" aria-live="polite" aria-label="Scorer output">
         {!result && !isReviewing ? <ReviewEmptyState /> : null}
         {isReviewing ? <ReviewLoading /> : null}
         {result && !isReviewing ? <ReviewOutput result={result} /> : null}
@@ -206,7 +183,7 @@ function ReviewOutput({ result }: { result: ReviewResult }) {
 
       {result.limitations.length ? (
         <details className="limitations">
-          <summary>Review limitations</summary>
+          <summary>Scorer limitations</summary>
           <ul>{result.limitations.map((item) => <li key={item}>{item}</li>)}</ul>
         </details>
       ) : null}
@@ -218,7 +195,7 @@ function ReviewEmptyState() {
   return (
     <div className="review-empty">
       <span>02</span>
-      <h2>Your review will appear here.</h2>
+      <h2>Your scorer output will appear here.</h2>
       <p>It will identify the exact copy or visual area, explain the issue, and give a concrete fix and completion check.</p>
       <div><b>Policy & claims</b><b>Brand tone</b><b>Brand language</b></div>
     </div>
@@ -229,7 +206,7 @@ function ReviewLoading() {
   return (
     <div className="review-loading">
       <span />
-      <h2>Reading the creative…</h2>
+      <h2>Scoring the creative…</h2>
       <p>Checking visible copy, claims, tone, language, hierarchy and qualifications.</p>
     </div>
   );

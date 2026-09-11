@@ -22,8 +22,9 @@ reviewer approval`.
 
 `reviewAd(input)` is the boundary between the web interface and review logic.
 The generator renders its existing 1080 × 1080 DOM creative to an in-memory
-JPEG, adds the exact known copy and product URL, then calls the same endpoint as
-the upload surface. No round trip through a download/re-upload flow is needed.
+JPEG, adds the exact known copy and product context internally, then calls the
+same endpoint as the upload surface. The upload surface itself stays image-only;
+no round trip through a download/re-upload flow is needed.
 
 The implementation has three layers:
 
@@ -52,4 +53,3 @@ cosmetics/consumer-protection context, Minimalist About/Values, 22 validated
 product pages across two cohorts, and the inspected current Meta ad corpus.
 The internal approved-claims and SKU registries remain missing dependencies;
 therefore the prototype does not invent claim approval.
-
