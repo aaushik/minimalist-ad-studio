@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { BRAND_ASSESSMENT_STATUSES } from "./types";
 
 export const modelFindingSchema = z.object({
   ruleId: z.string(),
@@ -15,6 +16,12 @@ export const modelFindingSchema = z.object({
 });
 
 export const modelReviewSchema = z.object({
+  brandAssessment: z.object({
+    status: z.enum(BRAND_ASSESSMENT_STATUSES),
+    detectedBrand: z.string().nullable(),
+    explanation: z.string(),
+    confidence: z.enum(["low", "medium", "high"]),
+  }),
   extractedText: z.string(),
   visualObservations: z.array(z.string()),
   findings: z.array(modelFindingSchema),
@@ -27,8 +34,19 @@ export type ModelReview = z.infer<typeof modelReviewSchema>;
 export const MODEL_REVIEW_JSON_SCHEMA = {
   type: "object",
   additionalProperties: false,
-  required: ["extractedText", "visualObservations", "findings", "revisedCopy", "resubmissionChecklist"],
+  required: ["brandAssessment", "extractedText", "visualObservations", "findings", "revisedCopy", "resubmissionChecklist"],
   properties: {
+    brandAssessment: {
+      type: "object",
+      additionalProperties: false,
+      required: ["status", "detectedBrand", "explanation", "confidence"],
+      properties: {
+        status: { type: "string", enum: BRAND_ASSESSMENT_STATUSES },
+        detectedBrand: { type: ["string", "null"] },
+        explanation: { type: "string" },
+        confidence: { type: "string", enum: ["low", "medium", "high"] },
+      },
+    },
     extractedText: { type: "string" },
     visualObservations: { type: "array", items: { type: "string" } },
     findings: {
@@ -56,4 +74,3 @@ export const MODEL_REVIEW_JSON_SCHEMA = {
     resubmissionChecklist: { type: "array", items: { type: "string" } },
   },
 } as const;
-

@@ -860,6 +860,104 @@ button {
   gap: 18px;
 }
 
+.brand-assessment {
+  padding: 19px 21px;
+  border: 1px solid #cad8d1;
+  border-left: 5px solid #478261;
+  border-radius: 14px;
+  background: #edf6f0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 7px 22px;
+}
+
+.brand-assessment > div p,
+.scoring-not-applicable > p {
+  margin: 0 0 6px;
+  color: #397052;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.brand-assessment h2 {
+  margin: 0;
+  font-size: 19px;
+  letter-spacing: -0.025em;
+}
+
+.brand-assessment > span {
+  grid-column: 1 / -1;
+  color: #53655d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.brand-assessment > small {
+  grid-column: 2;
+  grid-row: 1;
+  color: #5e7468;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.brand-assessment.brand-unclear {
+  border-color: #e3d2a6;
+  border-left-color: #c68b22;
+  background: #fff7e5;
+}
+
+.brand-unclear > div p,
+.brand-unclear > small {
+  color: #866018;
+}
+
+.brand-assessment.brand-other_brand {
+  border-color: #e3c4bd;
+  border-left-color: #a83e35;
+  background: #fff0ed;
+}
+
+.brand-other_brand > div p,
+.brand-other_brand > small {
+  color: #8f3d34;
+}
+
+.scoring-not-applicable {
+  min-height: 390px;
+  padding: 70px;
+  border: 1px dashed #d8c8c4;
+  border-radius: 18px;
+  background: #faf8f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.scoring-not-applicable > p {
+  color: #8f3d34;
+}
+
+.scoring-not-applicable h2 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.035em;
+}
+
+.scoring-not-applicable > span {
+  max-width: 560px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
 .scorecard-heading {
   padding: 4px 2px 12px;
   display: flex;
@@ -1154,6 +1252,15 @@ footer {
     align-items: flex-start;
   }
 
+  .brand-assessment {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-assessment > small {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
   .scorecard-heading {
     flex-direction: column;
   }
@@ -1173,7 +1280,8 @@ footer {
   }
 
   .review-empty,
-  .review-loading {
+  .review-loading,
+  .scoring-not-applicable {
     min-height: 420px;
     padding: 40px 22px;
   }

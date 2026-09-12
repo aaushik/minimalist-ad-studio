@@ -15,9 +15,12 @@ and exports a PNG. **Send to scorer** renders that creative in memory, opens the
 Scorer tab and scores it automatically. Scorer also accepts an independently
 uploaded static ad.
 
-The scorer returns three independent scores out of 5: Policy & Claims, Brand
-Tone, and Brand Language. Each score includes a short reason and one prominent
-action line, while the documented rules determine the number.
+The scorer checks brand identity before applying the Minimalist rubric. A
+clearly different brand receives no scores; an unclear creative is labelled as
+uncertain and still assessed as if it were for Minimalist. In-scope results
+contain three independent scores out of 5: Policy & Claims, Brand Tone, and
+Brand Language. Each score includes a short reason and one prominent action
+line, while the documented rules determine the number.
 
 ## Run locally
 

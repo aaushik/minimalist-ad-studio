@@ -8,8 +8,10 @@ The app has two connected but independently usable surfaces:
   data, composes a 1080 × 1080 static Meta ad with the real product photograph,
   and exports a PNG.
 - **Scorer** accepts the generated creative or an arbitrary uploaded static ad.
-  It returns separate scores out of 5 for Policy & Claims, Brand Tone and Brand
-  Language. Every score has a short reason and one prominent action.
+  It checks brand identity first. Minimalist and unclear creatives receive
+  separate scores out of 5 for Policy & Claims, Brand Tone and Brand Language;
+  a clearly different brand is identified and receives no scores. Every shown
+  score has a short reason and one prominent action.
 
 ## Evaluator flow
 
@@ -18,7 +20,8 @@ The app has two connected but independently usable surfaces:
 3. In Scorer, inspect the three dimension cards. The generated image is passed
    in memory; it is not uploaded to a public asset host.
 4. To test independence, open **Scorer**, upload any JPG, PNG or WebP static ad,
-   and select **Score ad**.
+   and select **Score ad**. An unclear brand is labelled and scored against the
+   Minimalist standard; a clearly different brand stops before the scorecard.
 
 The generator and scorer are deliberately decoupled. A marketer can iterate
 without review, while the same scorer can inspect work made outside this tool.
@@ -56,4 +59,3 @@ The app is Next.js and TypeScript, hosted on Vercel. The generator uses
 HTML/CSS composition and the actual product photograph instead of fabricating
 packaging with an image model. Gemini 3.5 Flash-Lite reads uploaded creatives;
 deterministic application code validates rule IDs and computes the scores.
-

@@ -25,8 +25,8 @@ brief's hard limit.
 
 1. Open the live app and generate the default Vitamin B5 ad.
 2. Select **Send to scorer** and inspect the three scores and action lines.
-3. Upload an unrelated static ad in **Scorer** to test the independent path.
+3. Upload an unrelated branded static ad in **Scorer** to verify that the brand
+   check appears and Minimalist scores are suppressed.
 4. Read the one-page decision document, then the failure modes.
 5. Use the build record and raw transcripts to inspect the process and
    iterations in full.
-

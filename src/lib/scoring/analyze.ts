@@ -2,6 +2,7 @@ import { RULES_BY_ID } from "./rules";
 import type { ModelReview } from "./schema";
 import { REVIEW_DIMENSIONS } from "./types";
 import type {
+  BrandAssessment,
   Confidence,
   DimensionScore,
   ReviewDimension,
@@ -179,6 +180,24 @@ const PASS_COPY: Record<ReviewDimension, Pick<DimensionScore, "explanation" | "a
   },
 };
 
+function brandAssessmentFor(input: ReviewInput, model: ModelReview | null): BrandAssessment {
+  if (input.source === "generator") {
+    return {
+      status: "minimalist",
+      detectedBrand: "Minimalist",
+      explanation: "This creative came from the Minimalist generator with beminimalist.co product context.",
+      confidence: "high",
+    };
+  }
+
+  return model?.brandAssessment ?? {
+    status: "unclear",
+    detectedBrand: null,
+    explanation: "Brand identity could not be confirmed because visual analysis was unavailable.",
+    confidence: "low",
+  };
+}
+
 function scoreForFindings(findings: ReviewFinding[]): DimensionScore["score"] {
   if (!findings.length) return 5;
   if (findings.some((finding) => finding.status === "block")) return 1;
@@ -234,6 +253,30 @@ export function assembleReview(
   model: ModelReview | null,
   modelError?: string,
 ): ReviewResult {
+  const brandAssessment = brandAssessmentFor(input, model);
+
+  if (brandAssessment.status === "other_brand") {
+    const identifiedBrand = brandAssessment.detectedBrand
+      ? `an ad for ${brandAssessment.detectedBrand}`
+      : "an ad for another brand";
+
+    return {
+      scoringApplicable: false,
+      brandAssessment,
+      verdict: "not_applicable",
+      summary: `This appears to be ${identifiedBrand}. Minimalist scores were not generated because the rubric is brand-specific.`,
+      dimensions: null,
+      dimensionScores: null,
+      extractedText: model?.extractedText ?? "",
+      visualObservations: model?.visualObservations ?? [],
+      findings: [],
+      revisedCopy: null,
+      resubmissionChecklist: [],
+      engine: model ? "gemini+rules" : "rules-only",
+      limitations: [],
+    };
+  }
+
   const local = analyzeText(input);
   const vision = model ? normalizeModelFindings(model) : [];
   const limitations: string[] = [];
@@ -289,6 +332,8 @@ export function assembleReview(
   const actionableChecklist = findings.slice(0, 5).map((finding) => finding.doneWhen);
 
   return {
+    scoringApplicable: true,
+    brandAssessment,
     verdict,
     summary: VERDICT_SUMMARIES[verdict],
     dimensions,

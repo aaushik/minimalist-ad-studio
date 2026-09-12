@@ -3,7 +3,7 @@
 import { ChangeEvent, useId, useState } from "react";
 
 import { REVIEW_DIMENSIONS } from "@/lib/scoring/types";
-import type { ReviewDimension, ReviewInput, ReviewResult } from "@/lib/scoring/types";
+import type { BrandAssessment, ReviewDimension, ReviewInput, ReviewResult } from "@/lib/scoring/types";
 
 type AdReviewerProps = {
   input: ReviewInput;
@@ -99,8 +99,23 @@ export function AdReviewer({
 }
 
 function ReviewOutput({ result }: { result: ReviewResult }) {
+  if (!result.scoringApplicable) {
+    return (
+      <div className="review-results">
+        <BrandAssessmentNotice assessment={result.brandAssessment} />
+        <section className="scoring-not-applicable">
+          <p>Scoring not applicable</p>
+          <h2>Minimalist scores are not shown.</h2>
+          <span>{result.summary}</span>
+        </section>
+        <p className="scorer-disclaimer">This scorer is calibrated specifically for Minimalist advertising.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="review-results">
+      <BrandAssessmentNotice assessment={result.brandAssessment} />
       <section className="scorecard-heading">
         <div>
           <p>Creative scorecard</p>
@@ -151,12 +166,36 @@ function ReviewOutput({ result }: { result: ReviewResult }) {
   );
 }
 
+function BrandAssessmentNotice({ assessment }: { assessment: BrandAssessment }) {
+  const title = assessment.status === "minimalist"
+    ? "Looks like a Minimalist ad."
+    : assessment.status === "unclear"
+      ? "Brand identity is unclear."
+      : assessment.detectedBrand
+        ? `This appears to be an ad for ${assessment.detectedBrand}.`
+        : "This appears to be an ad for another brand.";
+  const message = assessment.status === "unclear"
+    ? `The scores below assess this creative as if it were for Minimalist. ${assessment.explanation}`
+    : assessment.explanation;
+
+  return (
+    <section className={`brand-assessment brand-${assessment.status}`} aria-label="Brand check">
+      <div>
+        <p>Brand check</p>
+        <h2>{title}</h2>
+      </div>
+      <span>{message}</span>
+      <small>{assessment.confidence} confidence</small>
+    </section>
+  );
+}
+
 function ReviewEmptyState() {
   return (
     <div className="review-empty">
       <span>02</span>
-      <h2>Your three scores will appear here.</h2>
-      <p>Each dimension gets a score out of 5, a short explanation and one clear action to take next.</p>
+      <h2>Brand check first. Scores second.</h2>
+      <p>Minimalist and unclear creatives receive three scores. Clearly different brands do not.</p>
       <div><b>Policy & claims</b><b>Brand tone</b><b>Brand language</b></div>
     </div>
   );
@@ -166,8 +205,8 @@ function ReviewLoading() {
   return (
     <div className="review-loading">
       <span />
-      <h2>Scoring the creative…</h2>
-      <p>Checking visible copy, claims, tone, language, hierarchy and qualifications.</p>
+      <h2>Checking the creative…</h2>
+      <p>Identifying the brand first, then checking claims, tone, language, hierarchy and qualifications.</p>
     </div>
   );
 }

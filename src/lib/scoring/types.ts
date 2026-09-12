@@ -12,6 +12,16 @@ export type ReviewDimension = (typeof REVIEW_DIMENSIONS)[number];
 export type Severity = "low" | "medium" | "high" | "critical";
 export type Confidence = "low" | "medium" | "high";
 
+export const BRAND_ASSESSMENT_STATUSES = ["minimalist", "unclear", "other_brand"] as const;
+export type BrandAssessmentStatus = (typeof BRAND_ASSESSMENT_STATUSES)[number];
+
+export type BrandAssessment = {
+  status: BrandAssessmentStatus;
+  detectedBrand: string | null;
+  explanation: string;
+  confidence: Confidence;
+};
+
 export type ProductContext = {
   title?: string;
   url?: string;
@@ -60,11 +70,9 @@ export type DimensionScore = {
   ruleIds: string[];
 };
 
-export type ReviewResult = {
-  verdict: ReviewVerdict;
+type ReviewResultBase = {
+  brandAssessment: BrandAssessment;
   summary: string;
-  dimensions: Record<ReviewDimension, ReviewStatus>;
-  dimensionScores: Record<ReviewDimension, DimensionScore>;
   extractedText: string;
   visualObservations: string[];
   findings: ReviewFinding[];
@@ -73,3 +81,19 @@ export type ReviewResult = {
   engine: "gemini+rules" | "rules-only";
   limitations: string[];
 };
+
+export type ScoredReviewResult = ReviewResultBase & {
+  scoringApplicable: true;
+  verdict: ReviewVerdict;
+  dimensions: Record<ReviewDimension, ReviewStatus>;
+  dimensionScores: Record<ReviewDimension, DimensionScore>;
+};
+
+export type OutOfScopeReviewResult = ReviewResultBase & {
+  scoringApplicable: false;
+  verdict: "not_applicable";
+  dimensions: null;
+  dimensionScores: null;
+};
+
+export type ReviewResult = ScoredReviewResult | OutOfScopeReviewResult;

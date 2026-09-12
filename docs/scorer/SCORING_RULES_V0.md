@@ -9,8 +9,18 @@ is recorded in
 
 The scorer evaluates only Minimalist ads. Its public input is a static image;
 generator handoffs also include the known creative copy and product context
-internally. It always evaluates the ad against the same Minimalist standard;
-it does not infer a different brand from the input.
+internally. Before applying the rubric, an uploaded image receives a
+conservative brand-scope check:
+
+- `Minimalist`: show the brand assessment, then score normally.
+- `Unclear`: state that identity could not be confirmed, then score the ad as
+  if it were for Minimalist without requesting another user input.
+- `Other brand`: identify the visible brand when possible and do not calculate
+  or return the three scores.
+
+A retailer or marketplace mark does not make a clearly identifiable Minimalist
+product ad another brand. Visual style alone is insufficient to reject an ad;
+the scorer requires clear contradictory brand evidence.
 
 Its primary output is a compact three-dimension scorecard. Every score includes
 a short explanation and one actionable correction line, so a marketer can see

@@ -3,8 +3,10 @@
 ## Product behaviour
 
 The scorer accepts either an uploaded static ad or a creative handed off from
-the generator. Both enter one `reviewAd` workflow and return the same
-action-oriented contract. The public result intentionally shows only:
+the generator. Both enter one `reviewAd` workflow. A brand assessment appears
+before any score. Minimalist and unclear uploads continue to the same
+action-oriented contract; clearly different brands return `not_applicable`
+with structurally null score fields. The scored result intentionally shows only:
 
 - a score out of 5 for policy/claims, brand tone, and brand language;
 - one short explanation for each score; and
@@ -35,6 +37,13 @@ The implementation has three layers:
 3. `gemini.ts` is an optional server-only image-reading adapter. The API key
    never reaches the browser. Its structured observations are validated before
    being mapped back to the rule registry.
+
+The brand check is part of that same structured Gemini request, so it adds no
+provider call. Generator handoffs are trusted as Minimalist because they carry
+the app's `beminimalist.co` product context. Uploads use three conservative
+states: `minimalist`, `unclear`, and `other_brand`. Only the last suppresses
+scoring. Retailer/platform branding is explicitly distinguished from the
+advertised consumer brand.
 
 If Gemini is unavailable, supplied copy still receives deterministic checks.
 An uploaded image is never falsely passed: the output explicitly requests a
