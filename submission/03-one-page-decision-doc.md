@@ -14,12 +14,14 @@ principles; current official product pages and paid ads; older editorial or
 third-party material. Internal records were unavailable, which is a deliberate
 `Evidence required` boundary rather than a guessed pass.
 
-The evidence comprised Minimalist's About/Values pages; 22 product pages (the
-initial two, ten displayed bestsellers, and ten additional unbadged products
-across face, sun, eye, lip, hair, body and baby); 20 directly inspected static
-Meta executions plus 54 exact-normalized Meta copy executions; and Indian
-policy sources—ASCI Code Chapter I and disclaimer guidance, Cosmetics Rules
-2020 Rule 36, and the CCPA misleading-advertisement/endorsement guidelines.
+The rules were explicitly determined partly from the extracted current-ad
+corpus: 20 product-diverse static Meta executions and 54 exact-normalized Meta
+copy executions. It supplied real examples later classified as pass/revise
+anchors using policy and declared principles, and shaped claim, offer, tone,
+language and hierarchy rules; the supporting evidence maps each measured
+corpus signal to its resulting rule IDs. The remaining evidence was
+Minimalist's About/Values pages; 22 product pages across seven categories; and
+ASCI, Cosmetics Rules and CCPA policy sources.
 
 That produced three rule families:
 
@@ -34,13 +36,14 @@ That produced three rule families:
   verbs, ingredient/formulation → function → benefit, complete claim context,
   specificity over beauty filler, scannable hierarchy and a factual CTA.
 
-The broader product sample changed the standard. Strong verbs such as
+The corpus contained both restrained patterns and risky or inconsistent
+claims, so frequency became evidence of usage, not approval. Product pages
+reinforced this: strong verbs such as
 “repairs”, “prevents” and “treats” recur in official copy, so the scorer cannot
 call them off-brand by vocabulary alone; their evidence and approved wording
-matter. It also exposed `2%`/`02%` aliases, multi-active concentration totals,
-and physiological mechanisms. Those require a canonical SKU record and policy
-review, not frequency-based guesses. Official copy became evidence of actual
-usage, not proof of paid-channel approval.
+matter. `2%`/`02%` aliases, concentration totals and physiological mechanisms
+also require a canonical SKU record and policy review, not frequency-based
+guesses.
 
 ## What I cut and why
 
@@ -63,4 +66,3 @@ approval are also unknown. I resolved it by adding a source-context-transfer
 rule and failing to `Evidence required` when no approved ad mapping exists.
 The prototype therefore helps a marketer fix visible problems but never
 pretends to issue legal approval.
-

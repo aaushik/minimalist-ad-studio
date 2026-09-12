@@ -2,7 +2,7 @@
 
 Status: **Living source of truth for why each scoring rule exists**
 
-Last updated: 2026-09-11
+Last updated: 2026-09-12
 
 ## Purpose
 
@@ -55,6 +55,18 @@ policy claim is true.
   statutory misleading-advertising and endorsement context. A clause-by-clause
   product-category legal matrix is still outstanding.
 
+## How the current-ad corpus changed the rules
+
+The current Meta corpus was a rule-derivation input, not a post-hoc example
+set. The measured signal-to-rule mapping is recorded once in the submission's
+[corpus-derived scoring decisions](../../submission/05-supporting-evidence/README.md#corpus-derived-scoring-decisions);
+the rule-by-rule table below records the complete source basis and boundary.
+The corpus determined what the scorer looks for and supplied both positive and
+risky anchors. ASCI, regulation, declared principles and the missing approved
+internal records still determine whether a recurring pattern is acceptable.
+The scorer does not calculate similarity to the corpus at runtime; these
+findings were distilled into the versioned rules and prompt.
+
 ## Rule-by-rule basis
 
 Confidence means confidence that the rule is useful for triage, not that the
@@ -106,6 +118,14 @@ for actionable output and the user-confirmed interpretation recorded in
 
 ## Revision log
 
+### 2026-09-12 — current-ad derivation made explicit
+
+- Recorded the measured corpus signal behind each affected rule family.
+- Clarified that corpus patterns determined checks and anchors but do not act
+  as automatic evidence of approval.
+- Clarified that the corpus is distilled into the rules rather than queried at
+  runtime.
+
 ### 2026-09-11 — product-page validation
 
 - Expanded official product-page evidence from 2 to 22 pages.
@@ -114,4 +134,3 @@ for actionable output and the user-confirmed interpretation recorded in
 - Amended L02 so strong verbs are not automatically off-brand; evidence and
   approved wording determine acceptability.
 - Clarified that T05/L03 cannot reward mechanism language before P02/P05 checks.
-
