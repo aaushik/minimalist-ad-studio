@@ -33,6 +33,28 @@ test("a vague brief produces three copy and design variants", () => {
   assert.equal(new Set(plan.variants.map((variant) => variant.supportingCopy)).size, 3);
 });
 
+test("fallback copy stays distinct when the source repeats the product title", () => {
+  const repeatedProduct: ProductCreative = {
+    ...product,
+    title: "Gentle Cleanser",
+    eyebrow: "GENTLE CLEANSER",
+    headline: "Gentle Cleanser",
+    supportingCopy: "",
+    badges: "",
+    detailLine: "Gentle Cleanser",
+    size: "100ml",
+    price: "₹299",
+  };
+
+  const plan = finalizeCreativePlan({
+    product: repeatedProduct,
+    brief: "Build awareness",
+  });
+
+  assert.equal(new Set(plan.variants.map((variant) => variant.headline)).size, 3);
+  assert.equal(new Set(plan.variants.map((variant) => variant.supportingCopy)).size, 3);
+});
+
 test("a commerce brief is interpreted without an objective selector", () => {
   const plan = finalizeCreativePlan({
     product,
@@ -103,6 +125,41 @@ test("an unsafe model plan is discarded instead of publishing invented claims", 
   assert.doesNotMatch(allCopy, /90%|7 days|cure|guaranteed/i);
 });
 
+test("uncited non-numeric claims are rejected even when a real fact is cited", () => {
+  const proposedPlan = {
+    interpretation: {
+      objective: "awareness" as const,
+      audience: "Skincare shoppers",
+      tone: "Calm",
+      visualIntent: "Clean product campaign",
+    },
+    variants: [
+      ["product-splash", "Deeply repairs damaged skin"],
+      ["editorial-detail", "Meet the formula"],
+      ["ingredient-story", "Formula for your routine"],
+    ].map(
+      ([direction, headline], index) => {
+        const supportingCopy = [product.supportingCopy, product.detailLine, product.badges][index]!;
+        return {
+        direction,
+        messageAngle: `Angle ${index + 1}`,
+        eyebrow: "EVERYDAY CARE",
+        headline,
+        supportingCopy,
+        cta: "Explore product",
+        scenePrompt: "An abstract pale blue background with open space",
+        factsUsed: [supportingCopy],
+        };
+      },
+    ),
+  };
+
+  const plan = finalizeCreativePlan({ product, brief: "Build awareness", proposedPlan });
+
+  assert.equal(plan.source, "fallback");
+  assert.doesNotMatch(JSON.stringify(plan.variants), /deeply repairs damaged/i);
+});
+
 test("a valid model plan is kept when all cited facts come from the page", () => {
   const plan = finalizeCreativePlan({
     product,
@@ -139,7 +196,7 @@ test("a valid model plan is kept when all cited facts come from the page", () =>
           direction: "routine-grid",
           messageAngle: "Routine",
           eyebrow: "EVERYDAY CARE",
-          headline: "A moisturiser for your routine",
+          headline: "For your routine",
           supportingCopy: product.badges,
           cta: "View routine",
           scenePrompt: "Orderly skincare routine grid with empty product space",
@@ -152,4 +209,33 @@ test("a valid model plan is kept when all cited facts come from the page", () =>
   assert.equal(plan.source, "cloudflare");
   assert.equal(plan.interpretation.objective, "education");
   assert.equal(plan.variants[0]?.messageAngle, "Formula");
+});
+
+test("punctuation-only differences do not count as distinct copy routes", () => {
+  const plan = finalizeCreativePlan({
+    product,
+    brief: "Explain the formula",
+    proposedPlan: {
+      interpretation: {
+        objective: "education",
+        audience: "Skincare shoppers",
+        tone: "Clear",
+        visualIntent: "Formula education",
+      },
+      variants: ["product-splash", "editorial-detail", "ingredient-story"].map(
+        (direction, index) => ({
+          direction,
+          messageAngle: ["Formula", "Formula.", "FORMULA!"][index],
+          eyebrow: "EVERYDAY CARE",
+          headline: ["Product details", "Product details.", "PRODUCT DETAILS!"][index],
+          supportingCopy: [product.supportingCopy, product.detailLine, product.badges][index],
+          cta: "Explore product",
+          scenePrompt: "Abstract pale blue surface with open space",
+          factsUsed: [product.title, [product.supportingCopy, product.detailLine, product.badges][index]],
+        }),
+      ),
+    },
+  });
+
+  assert.equal(plan.source, "fallback");
 });

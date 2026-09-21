@@ -1401,18 +1401,33 @@ footer {
   border: 1px solid #d4dddd;
   border-radius: 12px;
   background: white;
-  cursor: pointer;
+  position: relative;
   text-align: left;
   transition: border-color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
 }
 
-.variant-card:hover {
+.variant-card:has(.variant-card-selector:hover) {
   transform: translateY(-2px);
 }
 
 .variant-card.active {
   border-color: #377f9f;
   box-shadow: 0 0 0 2px rgb(55 127 159 / 13%);
+}
+
+.variant-card-selector {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.variant-card-selector:focus-visible {
+  outline: 3px solid rgb(55 127 159 / 32%);
+  outline-offset: 3px;
 }
 
 .variant-card .creative-viewport {

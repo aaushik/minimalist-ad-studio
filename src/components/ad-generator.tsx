@@ -1,7 +1,7 @@
 "use client";
 
 import { toJpeg, toPng } from "html-to-image";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { AdReviewer } from "@/components/ad-reviewer";
 import { CreativePreview } from "@/components/creative-preview";
@@ -158,12 +158,6 @@ export function AdGenerator() {
         message: error instanceof Error ? error.message : "Unable to generate the creative set.",
       });
     }
-  };
-
-  const uploadProductImage = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-    updateProduct("imageUrl", URL.createObjectURL(file));
   };
 
   const downloadCreative = async () => {
@@ -332,20 +326,11 @@ export function AdGenerator() {
 
             {showEditor ? (
               <div className="editor-fields">
-                <p className="editor-note">Edits apply only to <b>{selectedVariant.directionLabel}</b>. Product facts and claims still require final review.</p>
-                <TextField label="Product name" value={product.title} maxLength={58} onChange={(value) => updateProduct("title", value)} />
+                <p className="editor-note">Edits apply only to the exact ad copy in <b>{selectedVariant.directionLabel}</b>. Product facts and the source image remain fixed across all routes.</p>
                 <TextField label="Eyebrow" value={product.eyebrow} maxLength={38} onChange={(value) => updateProduct("eyebrow", value)} />
                 <TextArea label="Headline" value={product.headline} maxLength={72} hint="Use a line break to control wrapping." onChange={(value) => updateProduct("headline", value)} />
                 <TextArea label="Supporting copy" value={product.supportingCopy} maxLength={165} onChange={(value) => updateProduct("supportingCopy", value)} />
-                <TextField label="Proof points" value={product.badges} maxLength={56} onChange={(value) => updateProduct("badges", value)} />
-                <TextField label="Formula line" value={product.detailLine} maxLength={54} onChange={(value) => updateProduct("detailLine", value)} />
-                <div className="field-row">
-                  <TextField label="Size" value={product.size} maxLength={14} onChange={(value) => updateProduct("size", value)} />
-                  <TextField label="Price" value={product.price} maxLength={14} onChange={(value) => updateProduct("price", value)} />
-                </div>
-                <TextField label="Original price (optional)" value={product.compareAtPrice ?? ""} maxLength={14} onChange={(value) => updateProduct("compareAtPrice", value)} />
                 <TextField label="Call to action" value={product.cta} maxLength={28} onChange={(value) => updateProduct("cta", value)} />
-                <label className="upload-button"><input type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadProductImage} /><span>Replace product image</span></label>
               </div>
             ) : null}
           </aside>
@@ -358,11 +343,18 @@ export function AdGenerator() {
 
             <div className={`variant-picker ${variants.length === 1 ? "single" : ""}`}>
               {variants.map((variant) => (
-                <button key={variant.id} type="button" className={`variant-card ${variant.id === selectedVariant.id ? "active" : ""}`} onClick={() => setSelectedId(variant.id)}>
+                <article key={variant.id} className={`variant-card ${variant.id === selectedVariant.id ? "active" : ""}`}>
                   <CreativePreview variant={variant} />
                   <span>{variant.directionLabel}</span>
                   <small>{variant.messageAngle}</small>
-                </button>
+                  <button
+                    className="variant-card-selector"
+                    type="button"
+                    aria-label={`Select ${variant.directionLabel}: ${variant.messageAngle}`}
+                    aria-pressed={variant.id === selectedVariant.id}
+                    onClick={() => setSelectedId(variant.id)}
+                  />
+                </article>
               ))}
             </div>
 

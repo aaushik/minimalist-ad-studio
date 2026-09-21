@@ -27,7 +27,7 @@ async function makeBackground(
   }
 
   return {
-    warning: `${variant.directionLabel} uses its safe designed background because the generated scene did not pass review.`,
+    warning: `${variant.directionLabel} uses its designed background because a generated scene was unavailable or did not pass review.`,
   };
 }
 

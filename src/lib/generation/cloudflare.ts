@@ -4,7 +4,7 @@ import type { CreativeGenerationServices } from "./generate";
 import type { PlannedVariant, ProposedCreativePlan } from "./types";
 
 const COPY_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
-const IMAGE_MODEL = "@cf/black-forest-labs/flux-2-klein-9b";
+const IMAGE_MODEL = "@cf/black-forest-labs/flux-2-klein-4b";
 const REVIEW_MODEL = "@cf/meta/llama-3.2-11b-vision-instruct";
 
 type CloudflareCredentials = {
@@ -106,7 +106,7 @@ async function proposePlan(
       Authorization: `Bearer ${cloudflare.token}`,
       "Content-Type": "application/json",
     },
-    signal: AbortSignal.timeout(45_000),
+    signal: AbortSignal.timeout(6_000),
     body: JSON.stringify({
       messages: [
         {
@@ -117,6 +117,8 @@ async function proposePlan(
             "Infer one objective: awareness, education, sales, or retargeting.",
             "Return exactly three variants with three different design directions and meaningfully different copy angles.",
             "Use only facts copied exactly from SOURCE FACTS. Cite every fact you rely on in factsUsed.",
+            "Each supportingCopy must be one different complete SOURCE FACT copied verbatim; do not paraphrase it.",
+            "Each headline must be an exact contiguous phrase from SOURCE FACTS, or one of: Meet [exact product title], Explore [exact product title], Discover [exact product title], A closer look at [exact product title], Inside the formula, Product details, For your routine, Take another look, Shop the product.",
             "Do not invent ingredients, discounts, results, certifications, urgency, medical claims, reviews, or statistics.",
             "Headlines may use neutral framing words, but factual claims and all numbers must come from SOURCE FACTS.",
             "Keep eyebrow <=38 characters, headline <=72, supportingCopy <=165, CTA <=28.",
@@ -166,7 +168,7 @@ async function generateScene(
   const response = await fetch(endpoint(cloudflare.accountId, IMAGE_MODEL), {
     method: "POST",
     headers: { Authorization: `Bearer ${cloudflare.token}` },
-    signal: AbortSignal.timeout(60_000),
+    signal: AbortSignal.timeout(17_000),
     body: form,
   });
   if (!response.ok) throw await cloudflareError(response);
@@ -195,7 +197,7 @@ async function reviewScene(
       Authorization: `Bearer ${cloudflare.token}`,
       "Content-Type": "application/json",
     },
-    signal: AbortSignal.timeout(45_000),
+    signal: AbortSignal.timeout(4_000),
     body: JSON.stringify({
       messages: [
         {
@@ -227,4 +229,3 @@ export function createCloudflareServices(): CreativeGenerationServices | null {
     reviewScene: (dataUrl, variant) => reviewScene(cloudflare, dataUrl, variant),
   };
 }
-

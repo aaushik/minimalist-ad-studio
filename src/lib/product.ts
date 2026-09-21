@@ -129,9 +129,14 @@ export async function fetchProductCreative(inputUrl: string): Promise<ProductCre
   const [productResponse, pageResponse] = await Promise.all([
     fetch(`https://beminimalist.co/products/${handle}.js`, {
       headers,
+      signal: AbortSignal.timeout(8_000),
       next: { revalidate: 3600 },
     }),
-    fetch(canonicalUrl, { headers, next: { revalidate: 3600 } }).catch(() => null),
+    fetch(canonicalUrl, {
+      headers,
+      signal: AbortSignal.timeout(8_000),
+      next: { revalidate: 3600 },
+    }).catch(() => null),
   ]);
 
   if (!productResponse.ok) {

@@ -22,7 +22,7 @@
 ## Cloudflare models
 
 - Copy and brief interpretation: `@cf/meta/llama-3.3-70b-instruct-fp8-fast`
-- Background generation: `@cf/black-forest-labs/flux-2-klein-9b`
+- Background generation: `@cf/black-forest-labs/flux-2-klein-4b` (the lower-cost model is sufficient because it creates abstract scenes rather than products or typography)
 - Background safety review: `@cf/meta/llama-3.2-11b-vision-instruct`
 
 ## Output contract
@@ -33,4 +33,3 @@
 - One unchanged source product image shared across all variants.
 - Each generated background records whether it came from Cloudflare or the safe fallback.
 - All outputs remain marked as drafts that require review.
-
