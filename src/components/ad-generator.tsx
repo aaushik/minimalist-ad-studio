@@ -5,6 +5,7 @@ import { ChangeEvent, useEffect, useRef, useState } from "react";
 
 import { AdReviewer } from "@/components/ad-reviewer";
 import { CreativePreview } from "@/components/creative-preview";
+import type { CreativeVariant, GenerationResult } from "@/lib/generation/types";
 import type { ProductCreative } from "@/lib/product";
 import type { ReviewInput, ReviewResult } from "@/lib/scoring/types";
 
@@ -28,20 +29,43 @@ const EXAMPLE_PRODUCT: ProductCreative = {
     "https://cdn.shopify.com/s/files/1/0410/9608/5665/products/B5Moisturizer1200-2-min.png?v=1756800645&width=1000",
 };
 
-const EMPTY_PRODUCT: ProductCreative = {
-  sourceUrl: "",
-  title: "",
-  eyebrow: "",
-  headline: "",
-  supportingCopy: "",
-  badges: "",
-  detailLine: "",
-  price: "",
-  compareAtPrice: "",
-  size: "",
-  cta: "Explore product",
-  imageUrl: "",
+const INITIAL_VARIANT: CreativeVariant = {
+  id: "example-variant",
+  direction: "editorial-detail",
+  directionLabel: "Editorial detail",
+  messageAngle: "Everyday barrier care",
+  eyebrow: EXAMPLE_PRODUCT.eyebrow,
+  headline: EXAMPLE_PRODUCT.headline,
+  supportingCopy: EXAMPLE_PRODUCT.supportingCopy,
+  cta: EXAMPLE_PRODUCT.cta,
+  scenePrompt: "",
+  factsUsed: [],
+  creative: EXAMPLE_PRODUCT,
+  backgroundSource: "fallback",
 };
+
+const BRIEF_HELPERS = [
+  {
+    label: "Product splash",
+    text: "Build awareness with a bold product splash, fluid movement and a calm premium tone.",
+  },
+  {
+    label: "Editorial detail",
+    text: "Explain the product through a refined editorial layout with generous whitespace and close-up detail.",
+  },
+  {
+    label: "Ingredient story",
+    text: "Educate ingredient-aware shoppers with a clear formula story and translucent ingredient-inspired textures.",
+  },
+  {
+    label: "Routine grid",
+    text: "Show where the product fits in an everyday skincare routine using an orderly modular grid.",
+  },
+  {
+    label: "Commerce focus",
+    text: "Drive sales from comparison shoppers with strong product hierarchy, visible price and a direct CTA.",
+  },
+] as const;
 
 type Status =
   | { kind: "idle"; message: string }
@@ -52,10 +76,13 @@ type Status =
 export function AdGenerator() {
   const [activeSurface, setActiveSurface] = useState<"generate" | "scorer">("generate");
   const [url, setUrl] = useState(EXAMPLE_URL);
-  const [product, setProduct] = useState(EXAMPLE_PRODUCT);
+  const [brief, setBrief] = useState("");
+  const [variants, setVariants] = useState<CreativeVariant[]>([INITIAL_VARIANT]);
+  const [selectedId, setSelectedId] = useState(INITIAL_VARIANT.id);
+  const [interpretation, setInterpretation] = useState<GenerationResult["interpretation"] | null>(null);
   const [status, setStatus] = useState<Status>({
     kind: "idle",
-    message: "Example loaded. Paste another Minimalist product URL whenever you’re ready.",
+    message: "Describe what the ad should achieve, or start with one of the examples.",
   });
   const [showEditor, setShowEditor] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
@@ -64,6 +91,8 @@ export function AdGenerator() {
   const [isReviewing, setIsReviewing] = useState(false);
   const [reviewError, setReviewError] = useState("");
   const creativeRef = useRef<HTMLDivElement>(null);
+  const selectedVariant = variants.find((variant) => variant.id === selectedId) ?? variants[0]!;
+  const product = selectedVariant.creative;
   const canExport = Boolean(
     product.title && product.headline && product.supportingCopy && product.imageUrl,
   );
@@ -74,45 +103,59 @@ export function AdGenerator() {
 
   const showSurface = (surface: "generate" | "scorer") => {
     setActiveSurface(surface);
-    window.history.replaceState(null, "", surface === "scorer" ? "#scorer" : window.location.pathname);
+    window.history.replaceState(
+      null,
+      "",
+      surface === "scorer" ? "#scorer" : window.location.pathname,
+    );
   };
 
   const updateProduct = (field: keyof ProductCreative, value: string) => {
-    setProduct((current) => ({ ...current, [field]: value }));
+    setVariants((current) =>
+      current.map((variant) =>
+        variant.id === selectedVariant.id
+          ? { ...variant, creative: { ...variant.creative, [field]: value } }
+          : variant,
+      ),
+    );
   };
 
-  const loadProduct = async () => {
-    setStatus({ kind: "loading", message: "Reading the product page…" });
+  const generateVariants = async () => {
+    if (!brief.trim()) {
+      setStatus({ kind: "error", message: "Add a creative brief or choose a starting point." });
+      return;
+    }
+
+    setStatus({
+      kind: "loading",
+      message: "Reading the product, writing three copy routes and creating their scenes…",
+    });
 
     try {
-      const response = await fetch("/api/product", {
+      const response = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url }),
+        body: JSON.stringify({ url, brief }),
       });
-      const payload = (await response.json()) as {
-        product?: ProductCreative;
-        error?: string;
-      };
-      if (!response.ok || !payload.product) {
-        throw new Error(payload.error || "Unable to read that product page.");
+      const payload = (await response.json()) as GenerationResult & { error?: string };
+      if (!response.ok || !payload.variants?.length) {
+        throw new Error(payload.error || "Unable to generate the creative set.");
       }
 
-      setProduct(payload.product);
+      setVariants(payload.variants);
+      setSelectedId(payload.variants[0]!.id);
+      setInterpretation(payload.interpretation);
       setShowEditor(true);
       setStatus({
         kind: "success",
-        message: "Product facts loaded from Minimalist. Review the copy before exporting.",
+        message: payload.warnings.length
+          ? `Three drafts created. ${payload.warnings.join(" ")}`
+          : "Three Cloudflare-assisted drafts created from verified product facts.",
       });
     } catch (error) {
-      setProduct({ ...EMPTY_PRODUCT, sourceUrl: url });
-      setShowEditor(true);
       setStatus({
         kind: "error",
-        message:
-          error instanceof Error
-            ? `${error.message} You can still edit the fields and upload a product image manually.`
-            : "Unable to load the product. Continue with the manual fields below.",
+        message: error instanceof Error ? error.message : "Unable to generate the creative set.",
       });
     }
   };
@@ -134,15 +177,13 @@ export function AdGenerator() {
         pixelRatio: 1,
       });
       const link = document.createElement("a");
-      link.download = `${product.title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-meta-square.png`;
+      const name = product.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+      link.download = `${name}-${selectedVariant.direction}-meta-square.png`;
       link.href = dataUrl;
       link.click();
-      setStatus({ kind: "success", message: "Your 1080 × 1080 PNG has been downloaded." });
+      setStatus({ kind: "success", message: "Your selected 1080 × 1080 PNG has been downloaded." });
     } catch {
-      setStatus({
-        kind: "error",
-        message: "The preview could not be exported. Try loading the product again.",
-      });
+      setStatus({ kind: "error", message: "The preview could not be exported. Try again." });
     } finally {
       setIsExporting(false);
     }
@@ -194,11 +235,13 @@ export function AdGenerator() {
           product.price,
           product.compareAtPrice,
           product.cta,
-        ].filter(Boolean).join("\n"),
+        ]
+          .filter(Boolean)
+          .join("\n"),
         productContext: { title: product.title, url: product.sourceUrl || url },
       });
     } catch {
-      setStatus({ kind: "error", message: "The preview could not be sent to the scorer. Try loading the product again." });
+      setStatus({ kind: "error", message: "The preview could not be sent to the scorer. Try again." });
     } finally {
       setIsExporting(false);
     }
@@ -218,196 +261,150 @@ export function AdGenerator() {
       </header>
 
       <section className="hero" id="top">
-        <p className="kicker">{activeSurface === "generate" ? "Evidence-led creative production" : "Actionable creative scoring"}</p>
-        <h1>{activeSurface === "generate" ? "Turn a product page into a ready-to-review ad." : "See what’s off—and exactly how to fix it."}</h1>
+        <p className="kicker">{activeSurface === "generate" ? "Brief-led creative generation" : "Actionable creative scoring"}</p>
+        <h1>{activeSurface === "generate" ? "One brief. Three distinct ad routes." : "See what’s off—and exactly how to fix it."}</h1>
         <p className="hero-copy">
           {activeSurface === "generate"
-            ? "Real product imagery. Page-supported copy. A reusable layout designed for Minimalist."
+            ? "Cloudflare writes and art-directs each route. The original product image and verified page facts stay intact."
             : "Upload a static ad for a first-pass check across policy, brand tone and brand language."}
         </p>
       </section>
 
-      {activeSurface === "generate" ? <section className="studio-grid">
-        <aside className="control-panel">
-          <div className="step-heading">
-            <span>01</span>
-            <div>
-              <h2>Choose a product</h2>
-              <p>Paste any public product page from beminimalist.co.</p>
-            </div>
-          </div>
-
-          <label className="field url-field">
-            <span>Product URL</span>
-            <input
-              type="url"
-              value={url}
-              onChange={(event) => setUrl(event.target.value)}
-              placeholder="https://beminimalist.co/products/…"
-            />
-          </label>
-          <details className="url-coverage">
-            <summary>Which URLs are supported?</summary>
-            <p>
-              Use a live <b>beminimalist.co</b> URL containing <code>/products/…</code>.
-              Direct and collection-prefixed product links both work. Malformed, non-HTTPS,
-              collection-only, search, homepage, other-domain, removed, unpublished, or
-              inaccessible product-data URLs do not.
-            </p>
-            <small>Coverage check: all 20 reviewed product pages loaded successfully.</small>
-          </details>
-          <button className="primary-button" type="button" onClick={loadProduct} disabled={status.kind === "loading"}>
-            {status.kind === "loading" ? "Reading product…" : "Build this ad"}
-            <span aria-hidden="true">→</span>
-          </button>
-
-          <div className={`status-message ${status.kind}`} role="status">
-            <span className="status-dot" />
-            {status.message}
-          </div>
-
-          <div className="divider" />
-
-          <button
-            className="editor-toggle"
-            type="button"
-            onClick={() => setShowEditor((current) => !current)}
-            aria-expanded={showEditor}
-          >
-            <span><b>02</b> Review and edit</span>
-            <span aria-hidden="true">{showEditor ? "−" : "+"}</span>
-          </button>
-
-          {showEditor ? (
-            <div className="editor-fields">
-              <p className="editor-note">
-                These fields are prefilled from the page. Treat edits as marketer-owned copy.
-              </p>
-              <TextField label="Product name" value={product.title} maxLength={58} onChange={(value) => updateProduct("title", value)} />
-              <TextField label="Eyebrow" value={product.eyebrow} maxLength={38} onChange={(value) => updateProduct("eyebrow", value)} />
-              <TextArea label="Headline" value={product.headline} maxLength={72} hint="Use a line break to control wrapping." onChange={(value) => updateProduct("headline", value)} />
-              <TextArea label="Supporting copy" value={product.supportingCopy} maxLength={165} onChange={(value) => updateProduct("supportingCopy", value)} />
-              <TextField label="Proof points" value={product.badges} maxLength={56} onChange={(value) => updateProduct("badges", value)} />
-              <TextField label="Formula line" value={product.detailLine} maxLength={54} onChange={(value) => updateProduct("detailLine", value)} />
-
-              <div className="field-row">
-                <TextField label="Size" value={product.size} maxLength={14} onChange={(value) => updateProduct("size", value)} />
-                <TextField label="Price" value={product.price} maxLength={14} onChange={(value) => updateProduct("price", value)} />
+      {activeSurface === "generate" ? (
+        <section className="studio-grid">
+          <aside className="control-panel">
+            <div className="step-heading">
+              <span>01</span>
+              <div>
+                <h2>Set the creative brief</h2>
+                <p>Paste a product URL and describe the outcome, audience, tone or visual idea.</p>
               </div>
-              <TextField label="Original price (optional)" value={product.compareAtPrice ?? ""} maxLength={14} onChange={(value) => updateProduct("compareAtPrice", value)} />
-              <TextField label="Call to action" value={product.cta} maxLength={28} onChange={(value) => updateProduct("cta", value)} />
-              <label className="upload-button">
-                <input type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadProductImage} />
-                <span>Replace product image</span>
-              </label>
             </div>
-          ) : null}
-        </aside>
 
-        <section className="preview-panel">
-          <div className="preview-heading">
-            <div>
-              <span className="placement-label">META · SQUARE</span>
-              <h2>Creative preview</h2>
-            </div>
-            <span className="dimensions">1080 × 1080</span>
-          </div>
+            <label className="field url-field">
+              <span>Product URL</span>
+              <input type="url" value={url} onChange={(event) => setUrl(event.target.value)} placeholder="https://beminimalist.co/products/…" />
+            </label>
 
-          <CreativePreview product={product} ref={creativeRef} />
+            <label className="field brief-field">
+              <span>Creative brief <small>{brief.length}/600</small></span>
+              <textarea
+                value={brief}
+                maxLength={600}
+                rows={5}
+                onChange={(event) => setBrief(event.target.value)}
+                placeholder="Example: Build awareness among oily-skin shoppers. Keep it calm, ingredient-led and premium."
+              />
+            </label>
 
-          <div className="preview-actions">
-            <div className="draft-note">
-              <span>DRAFT</span>
-              <p>Generated from page facts. Final review is still required.</p>
+            <div className="brief-helper-block">
+              <span>Try a starting point</span>
+              <div className="brief-helpers">
+                {BRIEF_HELPERS.map((helper) => (
+                  <button key={helper.label} type="button" onClick={() => setBrief(helper.text)}>{helper.label}</button>
+                ))}
+              </div>
             </div>
-            <div className="creative-action-buttons">
-              <button
-                className="score-button"
-                type="button"
-                onClick={sendToScorer}
-                disabled={isExporting || !canExport}
-                title={canExport ? "Send this draft to Scorer" : "Complete the creative first"}
-              >
-                {isExporting ? "Preparing…" : "Send to scorer"}
-                <span aria-hidden="true">→</span>
-              </button>
-              <button
-                className="download-button"
-                type="button"
-                onClick={downloadCreative}
-                disabled={isExporting || !canExport}
-                title={canExport ? "Download this draft" : "Add a product name, headline, supporting copy, and image first"}
-              >
-                {isExporting ? "Preparing PNG…" : "Download PNG"}
-                <DownloadIcon />
-              </button>
+
+            <button className="primary-button" type="button" onClick={generateVariants} disabled={status.kind === "loading"}>
+              {status.kind === "loading" ? "Creating three routes…" : "Generate 3 variants"}
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <div className={`status-message ${status.kind}`} role="status"><span className="status-dot" />{status.message}</div>
+
+            {interpretation ? (
+              <div className="brief-interpretation">
+                <span>Brief interpretation</span>
+                <dl>
+                  <div><dt>Objective</dt><dd>{interpretation.objective}</dd></div>
+                  <div><dt>Audience</dt><dd>{interpretation.audience}</dd></div>
+                  <div><dt>Tone</dt><dd>{interpretation.tone}</dd></div>
+                </dl>
+              </div>
+            ) : null}
+
+            <div className="divider" />
+
+            <button className="editor-toggle" type="button" onClick={() => setShowEditor((current) => !current)} aria-expanded={showEditor}>
+              <span><b>02</b> Edit selected variant</span><span aria-hidden="true">{showEditor ? "−" : "+"}</span>
+            </button>
+
+            {showEditor ? (
+              <div className="editor-fields">
+                <p className="editor-note">Edits apply only to <b>{selectedVariant.directionLabel}</b>. Product facts and claims still require final review.</p>
+                <TextField label="Product name" value={product.title} maxLength={58} onChange={(value) => updateProduct("title", value)} />
+                <TextField label="Eyebrow" value={product.eyebrow} maxLength={38} onChange={(value) => updateProduct("eyebrow", value)} />
+                <TextArea label="Headline" value={product.headline} maxLength={72} hint="Use a line break to control wrapping." onChange={(value) => updateProduct("headline", value)} />
+                <TextArea label="Supporting copy" value={product.supportingCopy} maxLength={165} onChange={(value) => updateProduct("supportingCopy", value)} />
+                <TextField label="Proof points" value={product.badges} maxLength={56} onChange={(value) => updateProduct("badges", value)} />
+                <TextField label="Formula line" value={product.detailLine} maxLength={54} onChange={(value) => updateProduct("detailLine", value)} />
+                <div className="field-row">
+                  <TextField label="Size" value={product.size} maxLength={14} onChange={(value) => updateProduct("size", value)} />
+                  <TextField label="Price" value={product.price} maxLength={14} onChange={(value) => updateProduct("price", value)} />
+                </div>
+                <TextField label="Original price (optional)" value={product.compareAtPrice ?? ""} maxLength={14} onChange={(value) => updateProduct("compareAtPrice", value)} />
+                <TextField label="Call to action" value={product.cta} maxLength={28} onChange={(value) => updateProduct("cta", value)} />
+                <label className="upload-button"><input type="file" accept="image/png,image/jpeg,image/webp" onChange={uploadProductImage} /><span>Replace product image</span></label>
+              </div>
+            ) : null}
+          </aside>
+
+          <section className="preview-panel">
+            <div className="preview-heading">
+              <div><span className="placement-label">META · SQUARE · 3 ROUTES</span><h2>Choose a direction</h2></div>
+              <span className="dimensions">1080 × 1080</span>
             </div>
-          </div>
+
+            <div className={`variant-picker ${variants.length === 1 ? "single" : ""}`}>
+              {variants.map((variant) => (
+                <button key={variant.id} type="button" className={`variant-card ${variant.id === selectedVariant.id ? "active" : ""}`} onClick={() => setSelectedId(variant.id)}>
+                  <CreativePreview variant={variant} />
+                  <span>{variant.directionLabel}</span>
+                  <small>{variant.messageAngle}</small>
+                </button>
+              ))}
+            </div>
+
+            <div className="selected-preview-heading">
+              <div><span>{selectedVariant.directionLabel}</span><strong>{selectedVariant.messageAngle}</strong></div>
+              <span className={`scene-source ${selectedVariant.backgroundSource}`}>
+                {selectedVariant.backgroundSource === "cloudflare" ? "Cloudflare scene" : "Designed fallback"}
+              </span>
+            </div>
+
+            <CreativePreview variant={selectedVariant} ref={creativeRef} />
+
+            <div className="preview-actions">
+              <div className="draft-note"><span>DRAFT</span><p>Original product image plus exact editable copy. Final review is required.</p></div>
+              <div className="creative-action-buttons">
+                <button className="score-button" type="button" onClick={sendToScorer} disabled={isExporting || !canExport} title={canExport ? "Send this draft to Scorer" : "Complete the creative first"}>
+                  {isExporting ? "Preparing…" : "Send to scorer"}<span aria-hidden="true">→</span>
+                </button>
+                <button className="download-button" type="button" onClick={downloadCreative} disabled={isExporting || !canExport} title={canExport ? "Download this draft" : "Complete the creative first"}>
+                  {isExporting ? "Preparing PNG…" : "Download PNG"}<DownloadIcon />
+                </button>
+              </div>
+            </div>
+          </section>
         </section>
-      </section> : (
-        <AdReviewer
-          input={reviewInput}
-          result={reviewResult}
-          isReviewing={isReviewing}
-          error={reviewError}
-          onInputChange={setReviewInput}
-          onReview={scoreCreative}
-        />
+      ) : (
+        <AdReviewer input={reviewInput} result={reviewResult} isReviewing={isReviewing} error={reviewError} onInputChange={setReviewInput} onReview={scoreCreative} />
       )}
 
-      <footer>
-        <span>Minimalist Ad Studio · v0.2</span>
-        <span>First-pass assistance only. Final claims, legal and brand approval stays with the reviewer.</span>
-      </footer>
+      <footer><span>Minimalist Ad Studio · v0.3</span><span>First-pass assistance only. Final claims, legal and brand approval stays with the reviewer.</span></footer>
     </main>
   );
 }
 
-function TextField({
-  label,
-  value,
-  maxLength,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  maxLength: number;
-  onChange: (value: string) => void;
-}) {
-  return (
-    <label className="field">
-      <span>{label} <small>{value.length}/{maxLength}</small></span>
-      <input value={value} maxLength={maxLength} onChange={(event) => onChange(event.target.value)} />
-    </label>
-  );
+function TextField({ label, value, maxLength, onChange }: { label: string; value: string; maxLength: number; onChange: (value: string) => void }) {
+  return <label className="field"><span>{label} <small>{value.length}/{maxLength}</small></span><input value={value} maxLength={maxLength} onChange={(event) => onChange(event.target.value)} /></label>;
 }
 
-function TextArea({
-  label,
-  value,
-  maxLength,
-  hint,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  maxLength: number;
-  hint?: string;
-  onChange: (value: string) => void;
-}) {
-  return (
-    <label className="field">
-      <span>{label} <small>{value.length}/{maxLength}</small></span>
-      <textarea value={value} maxLength={maxLength} rows={3} onChange={(event) => onChange(event.target.value)} />
-      {hint ? <em>{hint}</em> : null}
-    </label>
-  );
+function TextArea({ label, value, maxLength, hint, onChange }: { label: string; value: string; maxLength: number; hint?: string; onChange: (value: string) => void }) {
+  return <label className="field"><span>{label} <small>{value.length}/{maxLength}</small></span><textarea value={value} maxLength={maxLength} rows={3} onChange={(event) => onChange(event.target.value)} />{hint ? <em>{hint}</em> : null}</label>;
 }
 
 function DownloadIcon() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.8">
-      <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3" />
-    </svg>
-  );
+  return <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v3h16v-3" /></svg>;
 }

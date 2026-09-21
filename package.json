@@ -6,8 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "tsx --test src/lib/scoring/*.test.ts",
-    "typecheck": "tsc --noEmit"
+    "test": "tsx --test src/lib/scoring/*.test.ts src/lib/generation/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "prototype:cloudflare": "node --import tsx scripts/prototype-cloudflare-reference-ads.ts",
+    "prototype:cloudflare:seed-check": "node --import tsx scripts/prototype-cloudflare-seed-check.ts",
+    "prototype:cloudflare:full-ads": "node --import tsx scripts/prototype-cloudflare-full-ads.ts",
+    "prototype:cloudflare:hybrid": "node --import tsx scripts/prototype-cloudflare-hybrid-b5.ts"
   },
   "dependencies": {
     "@google/genai": "2.22.0",

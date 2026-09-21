@@ -2,10 +2,10 @@
 
 import { forwardRef, useEffect, useRef, useState } from "react";
 
-import type { ProductCreative } from "@/lib/product";
+import type { CreativeVariant } from "@/lib/generation/types";
 
 type CreativePreviewProps = {
-  product: ProductCreative;
+  variant: CreativeVariant;
 };
 
 function imageSource(imageUrl: string) {
@@ -16,9 +16,10 @@ function imageSource(imageUrl: string) {
 }
 
 export const CreativePreview = forwardRef<HTMLDivElement, CreativePreviewProps>(
-  function CreativePreview({ product }, forwardedRef) {
+  function CreativePreview({ variant }, forwardedRef) {
     const viewportRef = useRef<HTMLDivElement>(null);
     const [scale, setScale] = useState(0.5);
+    const product = variant.creative;
 
     useEffect(() => {
       const viewport = viewportRef.current;
@@ -36,9 +37,18 @@ export const CreativePreview = forwardRef<HTMLDivElement, CreativePreviewProps>(
     return (
       <div className="creative-viewport" ref={viewportRef}>
         <div className="creative-scaler" style={{ transform: `scale(${scale})` }}>
-          <div className="creative" ref={forwardedRef}>
+          <div
+            className={`creative creative--${variant.direction} ${variant.backgroundDataUrl ? "has-generated-scene" : ""}`}
+            ref={forwardedRef}
+            style={
+              variant.backgroundDataUrl
+                ? { backgroundImage: `url(${variant.backgroundDataUrl})` }
+                : undefined
+            }
+          >
             <div className="orb orb-blue" />
             <div className="orb orb-green" />
+            <div className="creative-grid-lines" />
 
             <div className="creative-brand">Minimalist.</div>
             <section className="creative-copy">
@@ -75,7 +85,7 @@ export const CreativePreview = forwardRef<HTMLDivElement, CreativePreviewProps>(
                 )}
               </div>
               <div className="creative-detail">
-                <b>PRODUCT PAGE CREATIVE</b>
+                <b>{variant.directionLabel.toUpperCase()}</b>
                 <span>{product.detailLine || product.title}</span>
               </div>
             </section>

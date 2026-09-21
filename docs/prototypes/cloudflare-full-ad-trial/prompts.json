@@ -1,0 +1,21 @@
+{
+  "model": "@cf/black-forest-labs/flux-2-klein-9b",
+  "productUrl": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+  "records": [
+    {
+      "id": "01-water-motion",
+      "status": "generated",
+      "prompt": "Create a COMPLETE, ready-to-publish square social media image ad, not a background or mockup. Image 0 is the actual Minimalist product photo. Make that ONE product the hero, closely matching its tube, colors, label, and proportions. Do not add other products. Source-derived direction: a bright white studio, restrained pale-blue water motion, and a centered hero product. One large headline above, a small CTA below. Dynamic but calm. Include finished, legible typography as part of the ad itself. Use exactly these short lines and no other ad copy: Brand: \"Minimalist\". Headline: \"Hydration for every day.\". Product line: \"Vitamin B5 10% Moisturizer\". Call to action: \"Explore product\". Use a premium, restrained skincare art direction: high contrast black type, warm white and very pale blue, ample space, clear hierarchy, studio-quality light. No discount, price, medical claim, extra logo, unrelated packaging, or small unreadable filler text. The output must be the finished ad, with its product and words already visible."
+    },
+    {
+      "id": "02-editorial",
+      "status": "generated",
+      "prompt": "Create a COMPLETE, ready-to-publish square social media image ad, not a background or mockup. Image 0 is the actual Minimalist product photo. Make that ONE product the hero, closely matching its tube, colors, label, and proportions. Do not add other products. Source-derived direction: editorial split composition. Large product on the right, crisp black headline on the left, generous whitespace, subtle paper texture and a fine pale-blue rule. Precise and educational. Include finished, legible typography as part of the ad itself. Use exactly these short lines and no other ad copy: Brand: \"Minimalist\". Headline: \"Meet your daily moisturizer.\". Product line: \"Vitamin B5 10% Moisturizer\". Call to action: \"Explore product\". Use a premium, restrained skincare art direction: high contrast black type, warm white and very pale blue, ample space, clear hierarchy, studio-quality light. No discount, price, medical claim, extra logo, unrelated packaging, or small unreadable filler text. The output must be the finished ad, with its product and words already visible."
+    },
+    {
+      "id": "03-commerce",
+      "status": "generated",
+      "prompt": "Create a COMPLETE, ready-to-publish square social media image ad, not a background or mockup. Image 0 is the actual Minimalist product photo. Make that ONE product the hero, closely matching its tube, colors, label, and proportions. Do not add other products. Source-derived direction: a warm-white product stage with a subtle pale-blue pedestal. Product on the left, bold purchase message on the right, clear button near the bottom. Clean and direct. Include finished, legible typography as part of the ad itself. Use exactly these short lines and no other ad copy: Brand: \"Minimalist\". Headline: \"A simple step for hydrated skin.\". Product line: \"Vitamin B5 10% Moisturizer\". Call to action: \"Explore product\". Use a premium, restrained skincare art direction: high contrast black type, warm white and very pale blue, ample space, clear hierarchy, studio-quality light. No discount, price, medical claim, extra logo, unrelated packaging, or small unreadable filler text. The output must be the finished ad, with its product and words already visible."
+    }
+  ]
+}

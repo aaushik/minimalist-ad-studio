@@ -1,0 +1,22 @@
+{
+  "model": "@cf/black-forest-labs/flux-2-klein-9b",
+  "productUrl": "https://beminimalist.co/products/vitamin-b5-10-moisturizer",
+  "sourcePhoto": "source-product.png",
+  "results": [
+    {
+      "id": "01-water-motion",
+      "prompt": "Create a square, high-end SKINCARE AD BACKGROUND ONLY. A bright white studio cyclorama with a restrained translucent pale-blue ribbon of water sweeping behind the lower half, delicate droplets, soft realistic reflections and ample light. Keep the entire upper 30 percent nearly blank for black headline text. Keep a tall empty central zone from 30 to 85 percent of image height for a real product photo to be placed later. Art direction is clean, clinical, calm and photographic. There is NO product, tube, bottle, package, pedestal, person, hand, logo, lettering, number, badge, or graphic text anywhere in the image.",
+      "status": "generated"
+    },
+    {
+      "id": "02-editorial",
+      "prompt": "Create a square, premium SKINCARE AD BACKGROUND ONLY. An editorial warm-white paper studio with faint tactile paper grain, a fine pale-blue line, subtle translucent glass and soft diagonal daylight shadow on the far right. Leave the left half quiet and empty for large black copy. Leave a tall empty zone in the right half for a real product photo to be placed later. Gentle asymmetry, restrained science-led visual language, refined natural light, credible commercial photography. There is NO product, tube, bottle, package, person, hand, logo, lettering, number, badge, or graphic text anywhere in the image.",
+      "status": "generated"
+    },
+    {
+      "id": "03-product-stage",
+      "prompt": "Create a square, high-end SKINCARE AD BACKGROUND ONLY. Warm ivory studio backdrop, a low pale-blue translucent acrylic product stage in the lower left, realistic soft shadow and subtle highlights. Leave a tall clear zone above the stage on the left for a real product photo to be placed later. Leave the right half quiet and open for black headline, product facts and a call to action. Calm minimalist commerce composition, polished studio photography, no excessive decoration. There is NO product, tube, bottle, package, person, hand, logo, lettering, number, badge, or graphic text anywhere in the image.",
+      "status": "generated"
+    }
+  ]
+}

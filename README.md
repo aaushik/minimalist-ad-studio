@@ -9,11 +9,18 @@ ad-review standard.
 
 ## Current status
 
-The generator accepts a Minimalist product URL, reads the store's public
-product data and page metadata, composes an editable 1080 × 1080 Meta creative,
-and exports a PNG. **Send to scorer** renders that creative in memory, opens the
-Scorer tab and scores it automatically. Scorer also accepts an independently
-uploaded static ad.
+The generator accepts a Minimalist product URL and one free-form creative
+brief. It infers the objective from the brief and returns three editable
+1080 × 1080 Meta routes with different copy and design directions. Cloudflare
+Workers AI writes the copy and generates background scenes. The app then adds
+the original product photograph and exact text, so the model cannot redraw or
+distort the pack label. Every route can be downloaded or sent directly to the
+Scorer. Scorer also accepts an independently uploaded static ad.
+
+Generated copy is checked against product-page facts. Generated scenes are
+reviewed for text, packaging and people before use. Model errors, unsafe scenes,
+or missing Cloudflare credentials produce three designed fallback drafts rather
+than blocking the flow.
 
 The scorer checks brand identity before applying the Minimalist rubric. A
 clearly different brand receives no scores; an unclear creative is labelled as
@@ -29,27 +36,27 @@ npm install
 npm run dev
 ```
 
-Copy `.env.example` to `.env.local` and add a Gemini API key if you want image
-reading:
+Copy `.env.example` to `.env.local`. Add Cloudflare credentials for generated
+copy and scenes, and a Gemini API key for scorer image reading:
 
 ```bash
 cp .env.example .env.local
 # edit GEMINI_API_KEY in .env.local
 ```
 
-Open <http://localhost:3000>. No API key is needed for the generator or the
-rules-only fallback. Without a key, uploaded images are explicitly routed to
-human visual review rather than receiving a false pass. Do not name the key
-`NEXT_PUBLIC_*`; it must remain server-only.
+Open <http://localhost:3000>. The generator still returns three variants without
+Cloudflare credentials by using its factual copy and designed background
+fallbacks. Without a Gemini key, uploaded images are explicitly routed to human
+visual review rather than receiving a false pass. Never name either provider's
+credentials `NEXT_PUBLIC_*`; they must remain server-only.
 
 The configured default is a free-tier Gemini Flash Lite model and can be
 changed with `GEMINI_MODEL`. Google states that free-tier content may be used to
 improve its products, so do not upload confidential or unreleased creative to
 the free tier without approval.
 
-The happy path uses Minimalist's public Shopify product JSON endpoint. If the
-page read fails, the existing draft stays editable and the marketer can upload
-a product photograph manually.
+The product read uses Minimalist's public Shopify product JSON endpoint. A live,
+supported product page is required to create a new three-route set.
 
 ## Working sequence
 
@@ -71,3 +78,5 @@ a product photograph manually.
 - [Scorer v1 implementation](docs/scorer/SCORER_V1_IMPLEMENTATION.md)
 - [Meta reference review](docs/research/current-ads/static/META_REFERENCE_REVIEW.md)
 - [Research log and corrections](docs/research/RESEARCH_LOG.md)
+- [Creative generation exploration](docs/CREATIVE_GENERATION_PLAN.md)
+- [Production creative generation specification](docs/CREATIVE_GENERATION_PRODUCTION_SPEC.md)
