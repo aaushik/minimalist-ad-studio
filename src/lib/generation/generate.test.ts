@@ -57,3 +57,33 @@ test("the source product image is preserved across all composed variants", async
   assert.ok(result.variants.every((variant) => variant.creative.imageUrl === product.imageUrl));
   assert.equal(new Set(result.variants.map((variant) => variant.creative.headline)).size, 3);
 });
+
+test("a daily Cloudflare quota error is explained and skips futile image calls", async () => {
+  let sceneCalls = 0;
+  const services: CreativeGenerationServices = {
+    proposePlan: async () => {
+      throw new Error(
+        "Cloudflare returned 429: you have used up your daily free allocation of 10,000 neurons",
+      );
+    },
+    generateScene: async () => {
+      sceneCalls += 1;
+      return "data:image/jpeg;base64,unused";
+    },
+    reviewScene: async () => true,
+  };
+
+  const result = await generateCreativeSet({
+    product,
+    brief: "Build awareness",
+    services,
+  });
+
+  assert.equal(sceneCalls, 0);
+  assert.deepEqual(result.variants.map((variant) => variant.backgroundSource), [
+    "fallback",
+    "fallback",
+    "fallback",
+  ]);
+  assert.ok(result.warnings.some((warning) => /daily Cloudflare quota is exhausted/i.test(warning)));
+});
