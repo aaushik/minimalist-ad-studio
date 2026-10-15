@@ -774,6 +774,15 @@ button {
   margin: 12px 2px 0;
 }
 
+.review-copy-field {
+  display: block;
+  margin: 20px 0;
+}
+
+.review-copy-field textarea {
+  min-height: 135px;
+}
+
 .review-output-panel {
   min-width: 0;
   padding: 42px;

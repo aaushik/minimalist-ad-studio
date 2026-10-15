@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { createCloudflareServices } from "@/lib/generation/cloudflare";
 import { generateCreativeSet } from "@/lib/generation/generate";
 import { fetchProductCreative } from "@/lib/product";
 
@@ -27,7 +26,7 @@ export async function POST(request: Request) {
     const result = await generateCreativeSet({
       product,
       brief: parsed.data.brief,
-      services: createCloudflareServices(),
+      services: null,
     });
     return NextResponse.json(result);
   } catch (error) {

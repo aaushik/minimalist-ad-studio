@@ -31,21 +31,9 @@ scenes containing products or stray text, a general product cutout or photo
 panel, and a fallback background/layout. These remain review drafts, not
 approved advertising.
 
-## Reproduce
+## Archive
 
-From the repository root, with `CLOUDFLARE_ACCOUNT_ID` and
-`CLOUDFLARE_API_TOKEN` in `.env.local`:
-
-```bash
-node --import tsx scripts/prototype-cloudflare-hybrid-b5.ts
-```
-
-To reuse the three saved scenes and regenerate only the compositions without
-calling Cloudflare:
-
-```bash
-node --import tsx scripts/prototype-cloudflare-hybrid-b5.ts --compose-only
-```
-
-The hand-traced mask applies only to the saved Vitamin B5 source photo. The
-script writes its artifacts into this directory and does not alter the app.
+The resulting images and prompts remain here as build evidence. The API trial
+scripts were removed when the Gemini and Cloudflare integrations were removed
+from the app. The hand-traced mask applied only to the saved Vitamin B5 source
+photo; this was an exploratory result, not an app feature.

@@ -1,5 +1,8 @@
 # Scorer v1 implementation
 
+This document records the original vision-enabled prototype. The current app
+uses only the local rule checks; its Gemini adapter has been removed.
+
 ## Product behaviour
 
 The scorer accepts either an uploaded static ad or a creative handed off from
@@ -34,9 +37,8 @@ The implementation has three layers:
    rule, default action, status, severity, and evidence basis.
 2. `analyze.ts` owns deterministic text checks, result assembly, deduplication,
    and verdict precedence.
-3. `gemini.ts` is an optional server-only image-reading adapter. The API key
-   never reaches the browser. Its structured observations are validated before
-   being mapped back to the rule registry.
+3. The original `gemini.ts` adapter read uploaded images. It has since been
+   removed, so visual observations require a human reviewer.
 
 The brand check is part of that same structured Gemini request, so it adds no
 provider call. Generator handoffs are trusted as Minimalist because they carry

@@ -128,7 +128,7 @@ export function AdGenerator() {
 
     setStatus({
       kind: "loading",
-      message: "Reading the product, writing three copy routes and creating their scenes…",
+      message: "Reading the product and composing three copy and design routes…",
     });
 
     try {
@@ -150,7 +150,7 @@ export function AdGenerator() {
         kind: "success",
         message: payload.warnings.length
           ? `Three drafts created. ${payload.warnings.join(" ")}`
-          : "Three Cloudflare-assisted drafts created from verified product facts.",
+          : "Three drafts created from verified product facts.",
       });
     } catch (error) {
       setStatus({
@@ -259,7 +259,7 @@ export function AdGenerator() {
         <h1>{activeSurface === "generate" ? "One brief. Three distinct ad routes." : "See what’s off—and exactly how to fix it."}</h1>
         <p className="hero-copy">
           {activeSurface === "generate"
-            ? "Cloudflare writes and art-directs each route. The original product image and verified page facts stay intact."
+            ? "Three routes use verified product facts, designed backgrounds and the original product image."
             : "Upload a static ad for a first-pass check across policy, brand tone and brand language."}
         </p>
       </section>
@@ -360,9 +360,7 @@ export function AdGenerator() {
 
             <div className="selected-preview-heading">
               <div><span>{selectedVariant.directionLabel}</span><strong>{selectedVariant.messageAngle}</strong></div>
-              <span className={`scene-source ${selectedVariant.backgroundSource}`}>
-                {selectedVariant.backgroundSource === "cloudflare" ? "Cloudflare scene" : "Designed fallback"}
-              </span>
+              <span className={`scene-source ${selectedVariant.backgroundSource}`}>Designed background</span>
             </div>
 
             <CreativePreview variant={selectedVariant} ref={creativeRef} />

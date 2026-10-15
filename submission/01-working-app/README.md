@@ -8,10 +8,9 @@ The app has two connected but independently usable surfaces:
   data, composes a 1080 × 1080 static Meta ad with the real product photograph,
   and exports a PNG.
 - **Scorer** accepts the generated creative or an arbitrary uploaded static ad.
-  It checks brand identity first. Minimalist and unclear creatives receive
-  separate scores out of 5 for Policy & Claims, Brand Tone and Brand Language;
-  a clearly different brand is identified and receives no scores. Every shown
-  score has a short reason and one prominent action.
+  It checks supplied copy against Policy & Claims, Brand Tone and Brand Language,
+  with a short reason and action for each score. Generator handoffs carry
+  Minimalist product context; uploaded images need a human brand and visual check.
 
 ## Evaluator flow
 
@@ -20,8 +19,9 @@ The app has two connected but independently usable surfaces:
 3. In Scorer, inspect the three dimension cards. The generated image is passed
    in memory; it is not uploaded to a public asset host.
 4. To test independence, open **Scorer**, upload any JPG, PNG or WebP static ad,
-   and select **Score ad**. An unclear brand is labelled and scored against the
-   Minimalist standard; a clearly different brand stops before the scorecard.
+   paste its visible copy, and select **Score this creative**. Text is checked
+   against the Minimalist standard; visual review is explicitly assigned to a
+   human.
 
 The generator and scorer are deliberately decoupled. A marketer can iterate
 without review, while the same scorer can inspect work made outside this tool.
@@ -35,15 +35,12 @@ automatic approval decision.
 git clone https://github.com/aaushik/minimalist-ad-studio.git
 cd minimalist-ad-studio
 npm install
-cp .env.example .env.local
-# Add GEMINI_API_KEY to .env.local for image reading
 npm run dev
 ```
 
-Open <http://localhost:3000>. The generator works without a key. Without a
-Gemini key, the scorer fails closed to human visual review rather than issuing
-a false pass. The production key is stored server-side in Vercel and is never
-exposed as a `NEXT_PUBLIC_*` variable.
+Open <http://localhost:3000>. No Gemini or Cloudflare credentials are needed.
+The scorer routes visual checks to human review rather than issuing a false
+pass on image content it cannot read.
 
 ## Known URL boundary
 
@@ -56,6 +53,5 @@ existing draft remains editable and a product image can be uploaded manually.
 ## Stack and visual-production choice
 
 The app is Next.js and TypeScript, hosted on Vercel. The generator uses
-HTML/CSS composition and the actual product photograph instead of fabricating
-packaging with an image model. Gemini 3.5 Flash-Lite reads uploaded creatives;
-deterministic application code validates rule IDs and computes the scores.
+HTML/CSS composition and the actual product photograph. The scorer applies
+deterministic rules to supplied copy; image content needs manual review.

@@ -11,20 +11,19 @@ ad-review standard.
 
 The generator accepts a Minimalist product URL and one free-form creative
 brief. It infers the objective from the brief and returns three editable
-1080 × 1080 Meta routes with different copy and design directions. Cloudflare
-Workers AI writes the copy and generates background scenes. The app then adds
-the original product photograph and exact text, so the model cannot redraw or
-distort the pack label. Every route can be downloaded or sent directly to the
-Scorer. Scorer also accepts an independently uploaded static ad.
+1080 × 1080 Meta routes with different copy and design directions. The app uses
+page-supported copy, designed backgrounds, and the original product photograph.
+Every route can be downloaded or sent directly to the Scorer. Scorer also accepts
+an independently uploaded static ad and pasted visible copy.
 
-Generated copy is checked against product-page facts. Generated scenes are
-reviewed for text, packaging and people before use. Model errors, unsafe scenes,
-or missing Cloudflare credentials produce three designed fallback drafts rather
-than blocking the flow.
+The Gemini and Cloudflare integrations have been removed. No credentials
+are required for either service. The generator always uses its local composition
+path; the scorer checks supplied text with documented rules and routes visual
+checks to a human reviewer.
 
-The scorer checks brand identity before applying the Minimalist rubric. A
-clearly different brand receives no scores; an unclear creative is labelled as
-uncertain and still assessed as if it were for Minimalist. In-scope results
+The scorer trusts product context from the generator. An uploaded creative is
+labelled as uncertain until a human confirms its brand and visual content.
+In-scope results
 contain three independent scores out of 5: Policy & Claims, Brand Tone, and
 Brand Language. Each score includes a short reason and one prominent action
 line, while the documented rules determine the number.
@@ -36,24 +35,9 @@ npm install
 npm run dev
 ```
 
-Copy `.env.example` to `.env.local`. Add Cloudflare credentials for generated
-copy and scenes, and a Gemini API key for scorer image reading:
-
-```bash
-cp .env.example .env.local
-# edit GEMINI_API_KEY in .env.local
-```
-
-Open <http://localhost:3000>. The generator still returns three variants without
-Cloudflare credentials by using its factual copy and designed background
-fallbacks. Without a Gemini key, uploaded images are explicitly routed to human
-visual review rather than receiving a false pass. Never name either provider's
-credentials `NEXT_PUBLIC_*`; they must remain server-only.
-
-The configured default is a free-tier Gemini Flash Lite model and can be
-changed with `GEMINI_MODEL`. Google states that free-tier content may be used to
-improve its products, so do not upload confidential or unreleased creative to
-the free tier without approval.
+Open <http://localhost:3000>. No API keys are needed. For an uploaded ad, paste
+its visible copy to get text checks. The image receives a human-review finding
+because the app does not read its pixels automatically.
 
 The product read uses Minimalist's public Shopify product JSON endpoint. A live,
 supported product page is required to create a new three-route set.

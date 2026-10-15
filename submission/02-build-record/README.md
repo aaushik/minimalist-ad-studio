@@ -8,8 +8,9 @@
   scorer and UI commits. It has not been squashed.
 
 The implementation used Codex as the coding/research agent, Git and GitHub for
-the build record, Next.js/TypeScript for the app, Gemini 3.5 Flash-Lite for
-image understanding, and Vercel for hosting. No prompt-to-app builder was used.
+the build record, Next.js/TypeScript for the app, Gemini 3.5 Flash-Lite during
+the original image-understanding prototype, and Vercel for hosting. The Gemini
+integration has since been removed. No prompt-to-app builder was used.
 
 ## App prompts
 

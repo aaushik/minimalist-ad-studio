@@ -9,8 +9,9 @@ packaging, ingredient labels or product appearance.
 
 ## Scorer
 
-The scorer currently calls `gemini-3.5-flash-lite` unless `GEMINI_MODEL` is
-set. The following is the complete prompt template from
+The original scorer called `gemini-3.5-flash-lite`. That API integration has
+been removed; this prompt is retained as build history. The following is the
+complete prompt template from
 [`src/lib/scoring/prompt.ts`](../../src/lib/scoring/prompt.ts). `${rules}` is
 the serialized rule ID, name, trigger and fix for every version-controlled rule
 in [`rules.ts`](../../src/lib/scoring/rules.ts); the remaining placeholders are

@@ -40,7 +40,11 @@ export function AdReviewer({
     try {
       const imageDataUrl = await prepareImageForReview(file);
       setFileName(file.name);
-      onInputChange({ source: "upload", imageDataUrl });
+      onInputChange({
+        source: "upload",
+        imageDataUrl,
+        knownText: input.source === "upload" ? input.knownText : "",
+      });
     } catch (uploadError) {
       setImageError(uploadError instanceof Error ? uploadError.message : "That image could not be prepared.");
     }
@@ -53,7 +57,7 @@ export function AdReviewer({
           <span>01</span>
           <div>
             <h2 id="scorer-title">Add a creative</h2>
-            <p>Upload a static ad, or send the current generated ad here.</p>
+            <p>Upload a static ad and paste its visible copy, or send a generated ad here.</p>
           </div>
         </div>
 
@@ -74,17 +78,28 @@ export function AdReviewer({
         {input.source === "generator" ? <p className="selected-file">Generated creative received and queued for scoring.</p> : null}
         {imageError ? <p className="input-error">{imageError}</p> : null}
 
+        <label className="field review-copy-field">
+          <span>Visible ad copy <small>For text checks</small></span>
+          <textarea
+            value={input.knownText ?? ""}
+            onChange={(event) => onInputChange({ ...input, knownText: event.target.value })}
+            placeholder="Paste the headline, supporting copy, claims, disclaimer and CTA exactly as shown."
+            maxLength={5_000}
+            rows={6}
+          />
+        </label>
+
         <button
           className="primary-button"
           type="button"
           onClick={() => onReview(input)}
-          disabled={isReviewing || !input.imageDataUrl}
+          disabled={isReviewing || !(input.imageDataUrl || input.knownText?.trim())}
         >
           {isReviewing ? "Scoring creative…" : "Score this creative"}
           <span aria-hidden="true">→</span>
         </button>
         <p className="review-privacy-note">
-          With Gemini configured, the image is sent securely from the server for analysis. Free-tier usage may be used by Google to improve its products.
+          AI image reading is disabled. Supplied copy is checked against documented rules; a person must review the image, brand and layout.
         </p>
         {error ? <div className="status-message error"><span className="status-dot" />{error}</div> : null}
       </aside>
@@ -121,7 +136,7 @@ function ReviewOutput({ result }: { result: ReviewResult }) {
           <p>Creative scorecard</p>
           <h2>Three dimensions. Three clear actions.</h2>
         </div>
-        <span>{result.engine === "gemini+rules" ? "Gemini vision + documented rules" : "Documented rules only"}</span>
+        <span>Documented rules only</span>
       </section>
 
       <section className="dimension-score-list" aria-label="Scores by dimension">

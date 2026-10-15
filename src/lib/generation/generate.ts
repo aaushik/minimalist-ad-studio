@@ -68,7 +68,7 @@ export async function generateCreativeSet({
       }
     }
   } else {
-    warnings.push("Cloudflare is not configured, so safe copy and background fallbacks were used.");
+    warnings.push("AI generation is disabled. Page-supported copy and designed backgrounds were used.");
   }
 
   const plan = finalizeCreativePlan({ product, brief, proposedPlan });

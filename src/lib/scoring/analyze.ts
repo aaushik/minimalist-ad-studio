@@ -193,7 +193,7 @@ function brandAssessmentFor(input: ReviewInput, model: ModelReview | null): Bran
   return model?.brandAssessment ?? {
     status: "unclear",
     detectedBrand: null,
-    explanation: "Brand identity could not be confirmed because visual analysis was unavailable.",
+    explanation: "Brand identity needs a manual visual check because automated image reading is disabled.",
     confidence: "low",
   };
 }
@@ -291,18 +291,18 @@ export function assembleReview(
       status: "human_review",
       severity: "high",
       location: "Uploaded creative",
-      observed: "The image was received, but no vision model was available to read it.",
+      observed: "The image was received, but automated image reading is disabled.",
       inference: null,
       whatIsOff: "Visual copy, disclaimer legibility, layout, and asset integrity have not been assessed.",
       whyItMatters: "A text-only check cannot safely clear an image ad.",
-      howToFix: "Configure GEMINI_API_KEY and rescore, or paste all visible copy and complete a manual visual review.",
+      howToFix: "Paste all visible copy for text checks and complete a manual visual review.",
       suggestedReplacement: null,
-      doneWhen: "The image has been read by the vision scorer or signed off by a human reviewer.",
+      doneWhen: "All visible copy has been checked and a human reviewer has signed off on the image.",
       confidence: "high",
       missingInput: "Vision analysis",
       sourceBasis: "Scorer input-quality safeguard",
     });
-    limitations.push(modelError ?? "Gemini vision is not configured; only supplied text was checked.");
+    limitations.push(modelError ?? "Automated image reading is disabled; only supplied text was checked.");
   }
 
   if (!input.imageDataUrl) {
